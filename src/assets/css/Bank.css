@@ -1,0 +1,687 @@
+* {
+  font-family: "Roboto";
+}
+.Banc_G {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+.Banks {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: #efefef;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Banck_Verse {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: 575px;
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Title_Bnack {
+  margin-top: 5px;
+  width: 100%;
+  max-width: 90%;
+  padding: 15px 0;
+  background-color: #efefef;
+}
+.Htitle {
+  font-size: 2.2em;
+  color: #3d3d3d;
+  font-weight: 900;
+  font-family: "Roboto";
+}
+
+.Bank_filter {
+  width: 100%;
+  max-width: 90%;
+  background-color: #efefef;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+}
+.Bank_form {
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+}
+.DadosSearch {
+  width: 100%;
+  max-width: 100%;
+  /* background-color: rgb(78, 77, 77); */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.Bank_Result {
+  width: 100%;
+  max-width: 60%;
+  background-color: #efefef;
+}
+.Result_A {
+  width: 100%;
+  /* max-width: 450px; */
+  max-width: 40%;
+  background-color: #fff;
+  border: solid 1px #000;
+  height: 30px;
+  margin-left: 0;
+  /* margin-bottom: 10px; */
+  font-size: 1em;
+  color: #494949;
+  padding: 15px;
+}
+.Result_Soruce {
+  width: 100%;
+  /* max-width: 450px; */
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Result_C {
+  width: 100%;
+  max-width: 30%;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+/* .RadioR {
+  width: 20px;
+  border: solid 1px #000;
+  background-color: #c03742;
+} */
+
+.RadioR[type="radio"] {
+  background-color: #fff;
+  background-image: -webkit-linear-gradient(
+      0deg,
+      transparent 20%,
+      hsla(0, 0%, 100%, 0.7),
+      transparent 80%
+    ),
+    -webkit-linear-gradient(90deg, transparent 20%, hsla(0, 0%, 100%, 0.7), transparent
+          80%);
+  border-radius: 10px;
+  box-shadow: inset 0 1px 1px hsla(0, 0%, 100%, 0.8),
+    0 0 0 1px hsla(0, 0%, 0%, 0.6), 0 2px 3px hsla(0, 0%, 0%, 0.6),
+    0 4px 3px hsla(0, 0%, 0%, 0.4), 0 6px 6px hsla(0, 0%, 0%, 0.2),
+    0 4px 2px hsla(0, 0%, 0%, 0.2);
+  cursor: pointer;
+  display: inline-block;
+  height: 15px;
+  margin-right: 15px;
+  position: relative;
+  width: 15px;
+  -webkit-appearance: none;
+}
+.RadioR[type="radio"]:after {
+  background-color: transparent;
+  /* background-color: rgb(150, 0, 0); */
+  border-radius: 25px;
+  /* box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.4),
+    0 1px 1px hsla(0, 0%, 100%, 0.8); */
+  content: "";
+  display: block;
+  height: 7px;
+  left: 4px;
+  position: relative;
+  top: 4px;
+  width: 7px;
+}
+.RadioR[type="radio"]:checked:after {
+  background-color: rgb(0, 0, 0);
+  /* box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.4),
+    inset 0 2px 2px hsla(0, 0%, 100%, 0.4), 0 1px 1px hsla(0, 0%, 100%, 0.8),
+    0 0 2px 2px hsla(0, 70%, 70%, 0.4); */
+}
+
+.LBr {
+  font-size: 0.8em;
+}
+.RadioR[type="radio"]:checked ~ .LBr {
+  color: rgb(124, 0, 0);
+  font-weight: 600;
+}
+
+.Result_pesquisar {
+  width: 100%;
+
+  margin-left: 10px;
+  max-width: 50%;
+  background-color: #181818;
+  color: #fff;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.Result_pesquisar:hover {
+  background-color: #5c5b5b;
+}
+.Result_pesquisar span {
+  color: #fff;
+  font-size: 0.6em;
+}
+#teste {
+  color: #fff;
+}
+.Result_pesquisar:hover #teste {
+  color: #810101;
+  font-size: 19px;
+}
+.Bank_Valor {
+  width: 100%;
+  max-width: 40%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.Player_valor {
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 30px;
+}
+.Player_V {
+  color: #fff;
+  font-size: 1em;
+  font-weight: 800;
+}
+
+/* carousel banca */
+.Bank_carousel {
+  width: 100%;
+  max-width: 90%;
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.Bank_carousel_A {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card_playerbank {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  height: 100%;
+
+  margin-bottom: 20px;
+}
+.Bank_carousel_Player {
+  width: 100%;
+  max-width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Bank_carousel_B {
+  width: 80%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Bank_vender {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  z-index: 9999;
+  /* margin-top: -7px;
+  margin-bottom: 10px; */
+}
+
+.card_player {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  height: 100%;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+.figuraT {
+  width: 100%;
+  /* max-width: 174px; */
+  max-width: 110px;
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left;
+}
+.Dfigureg {
+  display: flex;
+  width: 100%;
+  height: auto;
+  /* background-color: red; */
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Dobtn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 60%;
+  height: auto;
+  /* background-color: blue; */
+  position: absolute;
+  bottom: 30%;
+  /* bottom: 80px; */
+}
+.Dobtn:hover > #fulanos {
+  display: flex;
+  position: absolute;
+  z-index: 1;
+}
+.DobtD {
+  position: relative;
+  background-color: #810101;
+  color: #fff;
+  width: 30px;
+  /* margin-left: 15px; */
+  min-width: 40px;
+  height: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.DobtImage {
+  position: relative;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAotJREFUSEvFls1NAzEQhbMSd0gFhAoIFRAqACogVECogFABSQUkFQAVECoAKiBUANw4IIX3oTFyvLbXgEQsjdbaHc+befPjrVorWtWKcFs/Al4sFl05ui/pmOD33OSmqqqH0kAagQW2IWMnkoGEPevZwNjjxKa9f9VzJBnLCfbJlQUW6IFOXhrgVM9rySw0as719A39Iwmgx9JDP7qSwDJGhBeSR8lARma5CNw3ncMBot62c+PYuSiwB0qUgGZpCw0bA4AT/anOs19aNWCj90paUx3ol0SZ0pGtiYHvhYwtAZunT1KmeHq5SKWLUxuxaDzaKUZStC7Z8e2FwEMpnElqHkboxGBLxno5Viznt9I5ly72v1YITC6vcxRbpPSyA6Ry6eFkBRvl+9Jp14BtONzrw2HKiIHSXqTiw4ys6Ukf587RZtQNdH8Nme+IZdTR3E7lVjrQ29H3jk+vRQRT0aitdl58un3gCfSFRgMAgDels+W/L9kLnDROdJb5sBQxRrPF4lGNEX8uY5CeTy5j69u+H3EjMFYNnJy5uQ3t5JgRCWvRlQPm0O4faGSG41AKOEn1UCfo4VxxYZi2OPatK5o51KeAm4qrq8NN7eTaAqB3Ca2EQHeSaq826u1k+SsZIIA74RhFRnHl8kub0TGuLmqTy9H97yMTj6CRiwLw5HVoVyftUbvyXP4tt8xpRmU3eUkY3S6P0LdURNFyzbwsvhY9T5ku/H2QNy7y3/wIcL6fKrqSXx+KB/BZScR2DQJKl0T/PrBT8rNH1FzkPKnOu5ABy+WuRUiquL36OWdLf2+hHsEBlj+ricy1yZv2FNuoKT2NwD69dme7OQ0gi1S4/mdftH4EXGSxUGllwJ9CglEuqzBeFQAAAABJRU5ErkJggg==");
+  width: 100%;
+  max-width: 50%;
+  height: 50%;
+  /* background: red; */
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.Imgcard {
+  width: 100%;
+  max-width: 99%;
+  margin: 2px;
+  height: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+}
+.Txtcards {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: red; */
+}
+.SalesV {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: #000;
+  color: #fff;
+  font-size: 10px;
+}
+.Txcard {
+  width: 100%;
+  max-width: 100%;
+  font-size: 0.8em;
+  color: #000;
+  font-weight: 800;
+  /* height: 20px; */
+  padding: 2px 5px;
+  /* background-color: #fff; */
+}
+.Txtcard_fill {
+  width: 100%;
+  max-width: 100%;
+  font-size: 10px;
+  color: #4d4c4c;
+  padding: 5px 5px;
+  /* background-color: #fff; */
+}
+
+.Title_Historyc {
+  margin-top: 5px;
+  width: 100%;
+  max-width: 100%;
+  padding: 15px 0;
+  background-color: #fff;
+}
+.textH3 {
+  width: 100%;
+  max-width: 100%;
+  font-size: 0.8em;
+  color: #3d3d3d;
+  padding: 10px 0 0 100px;
+  font-weight: 900;
+  font-family: "Roboto";
+}
+.TxtHistoric {
+  font-size: 2.2em;
+  color: #3d3d3d;
+  font-weight: 900;
+  font-family: "Roboto";
+  padding: 10px 0 0 100px;
+  font-weight: 900;
+}
+
+#carbanc {
+  overflow: hidden !important;
+  padding-left: 20px;
+}
+
+.itensPage {
+  width: 500px;
+  padding: 1em;
+  margin: 1em;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.listbtn {
+  width: 100%;
+  max-width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnfiltr {
+  position: relative;
+  background-color: #810101;
+  color: #fff;
+  width: 40px;
+  max-width: 20px;
+  margin-right: 5px;
+  min-width: 20px;
+  height: 20px;
+  min-height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+@media (max-width: 1200px) {
+  .Banks {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .Banck_Verse {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    /* background-color: #000; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .Title_Bnack {
+    width: 100%;
+    max-width: 100%;
+  }
+  .Htitle {
+    margin-left: 2%;
+  }
+  .Bank_filter {
+    width: 100%;
+    max-width: 100%;
+  }
+  .Bank_Result {
+    width: 100%;
+    max-width: 100%;
+  }
+  .Result_A {
+    width: 100%;
+    max-width: 97%;
+    margin-left: 1%;
+  }
+  .DadosSearch {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+  }
+  .Result_Soruce {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #f3f3f3;
+  }
+  .Result_C {
+    width: 100%;
+    max-width: 50%;
+    padding: 15px 0 0 20px;
+    justify-content: start;
+  }
+  #pesquiF {
+    width: 100%;
+    padding: 20px 5px 5px 0;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Result_pesquisar {
+    width: 100%;
+    max-width: 98%;
+    margin-left: 0;
+  }
+  .Bank_Valor {
+    width: 100%;
+    max-width: 100%;
+    background-color: #f3f3f3;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 8%;
+  }
+  .Player_valor {
+    margin-right: 1%;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 100%;
+    max-width: 98%;
+  }
+  .Bank_carousel {
+    width: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .Bank_carousel_A {
+    overflow-x: overlay;
+    width: 100%;
+    max-width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+    display: -webkit-box;
+  }
+
+  .figuraT {
+    margin-right: 5px;
+    margin-bottom: 50px;
+    width: 100%;
+    /* max-width: 160px; */
+    max-width: 110px;
+    /* max-width: 350px; */
+    height: auto;
+    background-color: #fff;
+  }
+  .Imgcard {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .Txtcard_fill {
+    width: 100%;
+    max-width: 100%;
+    font-size: 10px;
+  }
+  .Txcard {
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.7em;
+    /* margin-bottom: 5px; */
+  }
+
+  .Bank_vender {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .TxtHistoric {
+    font-size: 1.8em;
+    color: #3d3d3d;
+    font-weight: 900;
+    font-family: "Roboto";
+    padding: 10px 0 0 20px;
+    font-weight: 600;
+  }
+  .textH3 {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 0 0 20px;
+    font-size: 1em;
+  }
+  #carbanc {
+    padding: 0;
+  }
+}
+
+/* apagar teste */
+.App {
+  width: 100%;
+  max-width: 98%;
+  background-color: #ccc;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  font-family: "Roboto";
+  text-align: center;
+}
+
+.animes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  list-style: none;
+  grid-gap: 1.5rem;
+}
+
+.animes-list img {
+  max-width: 100%;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+}
+
+/* .pagination li + li {
+  margin-left: 1rem;
+} */
+/* .pagination__item {
+  width: 50px;
+  max-width: 50px;
+  margin-left: 3px;
+  margin-right: 3px;
+  background-color: rgb(224, 171, 171);
+} */
+.PaginationBtn {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-right: 60px;
+  margin-left: 60px;
+  width: 100%;
+  max-width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+.pagination__item--active {
+  background: none;
+  font-weight: bold;
+  border: none;
+  width: 30px;
+  height: 20px;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 0.8em;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+.pagination__item--active:focus {
+  transition: all 3s ease-in-out;
+  outline: none;
+}
