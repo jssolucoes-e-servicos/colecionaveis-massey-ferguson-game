@@ -1,7 +1,3 @@
-import ouro from "@/assets/images/rank/1.png";
-import prata from "@/assets/images/rank/2.png";
-import bronze from "@/assets/images/rank/3.png";
-import basic from "@/assets/images/rank/basics.png";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import {
   ListPagination, Pagination, PaginationBox
@@ -9,9 +5,6 @@ import {
 import AuthContext from "@/contexts/authContext";
 import Template from "@/layouts/GameLayout";
 import API from "@/services/api";
-import { parseCookies } from "nookies";
-import React, { useContext, useEffect, useState } from "react";
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import {
   ContainerRank,
   RankA, Rankform,
@@ -19,7 +12,10 @@ import {
   RankingFormTxtHrs,
   RankingImagePlayer, RankingTxtPonto, RanktPlayeA,
   RanktxtPlayerB
-} from "./rankingStyle";
+} from "@/styles/pages/rankingStyle";
+import { parseCookies } from "nookies";
+import React, { useContext, useEffect, useState } from "react";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 export default function Ranking({userData}) {
   const { setLoad } = useContext(AuthContext);
@@ -78,7 +74,7 @@ export default function Ranking({userData}) {
                     <RankingFormB key={item.id}>
                       {item.id === tops[0].id ? (
                         <>
-                          <RankingImagePlayer src={ouro} />
+                          <RankingImagePlayer src="/storage/images/rank/1.png" />
                           <RankingTxtPonto> 1º </RankingTxtPonto>
                           <RankingFormTxt style={{ color: "#333" }}>
                             {item.name.length >= 18
@@ -88,7 +84,7 @@ export default function Ranking({userData}) {
                         </>
                       ) : item.id === tops[1].id ? (
                         <>
-                          <RankingImagePlayer src={prata} />
+                          <RankingImagePlayer src="/storage/images/rank/2.png" />
                           <RankingTxtPonto> 2º </RankingTxtPonto>
                           <RankingFormTxt style={{ color: "#333" }}>
                             {item.name.length >= 18
@@ -98,7 +94,7 @@ export default function Ranking({userData}) {
                         </>
                       ) : item.id === tops[2].id ? (
                         <>
-                          <RankingImagePlayer src={bronze} />
+                          <RankingImagePlayer src="/storage/images/rank/3.png" />
                           <RankingTxtPonto> 3º </RankingTxtPonto>
                           <RankingFormTxt style={{ color: "#333" }}>
                             {item.name.length >= 18
@@ -108,7 +104,7 @@ export default function Ranking({userData}) {
                         </>
                       ) : (
                         <>
-                          <RankingImagePlayer src={basic} />
+                          <RankingImagePlayer src="/storage/images/rank/basics.png" />
                           <RankingTxtPonto> </RankingTxtPonto>
                           <RankingFormTxt>
                             {item.name.length >= 18

@@ -1,9 +1,3 @@
-import HistoryM from "@/assets/images/1.png";
-import vender from "@/assets/images/jogar/1.png";
-import edits from "@/assets/images/jogar/2.png";
-import regate from "@/assets/images/jogar/3.png";
-import musics from "@/assets/images/jogar/4.JPG";
-import idioma from "@/assets/images/jogar/5.gif";
 import Template from "@/layouts/GameLayout";
 import {
   Container,
@@ -65,7 +59,7 @@ export default function Howplay({userData}) {
                   botão da esquerda serve para colagem da figurinha e o da
                   direita para venda/troca.
                 </PlayTXT>
-                <PlayImaageM src={vender} style={{ maxWidth: 50 }} />
+                <PlayImaageM src="/storage/images/jogar/1.png" style={{ maxWidth: 50 }} />
               </PlayBlocoTXT>
               <PlayBlocoTXT>
                 <h2>Como saber meu desempenho no jogo?</h2>
@@ -90,7 +84,7 @@ export default function Howplay({userData}) {
                     flexDirection: "row",
                   }}
                 >
-                  <PlayImage src={HistoryM} style={{ padding: 0 }} />
+                  <PlayImage src="/storage/images/jogar/figure_01.png" style={{ padding: 0 }} />
 
                   <p style={{ marginLeft: 8 }}>
                     Vá até a Banca e selecione a figurinha que deseja comprar,
@@ -114,7 +108,7 @@ export default function Howplay({userData}) {
                   desempenho no jogo. Clicando em “Editar perfil”, seus dados
                   poderão ser alterados.
                 </PlayTXT>
-                <PlayImaageM src={edits} style={{ maxWidth: 80 }} />
+                <PlayImaageM src="/storage/images/jogar/2.png" style={{ maxWidth: 80 }} />
               </PlayBlocoTXT>
               <PlayBlocoTXT>
                 <h2>Como resgatar uma figurinha?</h2>
@@ -122,14 +116,14 @@ export default function Howplay({userData}) {
                   Clicando em Perfil, você poderá resgatar a sua figurinha ao
                   digitar o cupom do influencer.
                 </PlayTXT>
-                <PlayImaageM src={regate} style={{ maxWidth: 80 }} />
+                <PlayImaageM src="/storage/images/jogar/3.png" style={{ maxWidth: 80 }} />
               </PlayBlocoTXT>
               <PlayBlocoTXT>
                 <h2>Como parar a música?</h2>
                 <PlayTXT>
                   Clique na setinha verde no canto superior esquerdo.
                 </PlayTXT>
-                <PlayImaageM src={musics} style={{ width: 30 }} />
+                <PlayImaageM src="/storage/images/jogar/4.JPG" style={{ width: 30 }} />
               </PlayBlocoTXT>
               <PlayBlocoTXT>
                 <h2>Como trocar o idioma?</h2>
@@ -138,7 +132,7 @@ export default function Howplay({userData}) {
                   alterar, basta clicar nas bandeiras disponíveis no menu
                   lateral.
                 </PlayTXT>
-                <PlayImaageM src={idioma} />
+                <PlayImaageM src="/storage/images/jogar/5.gif" />
               </PlayBlocoTXT>
             </PlayA>
           </Playdas>

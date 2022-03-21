@@ -1,4 +1,3 @@
-import "@/assets/css/Bank.css";
 import IconBank from "@/assets/images/icons/banca.png";
 import IconColar from "@/assets/images/icons/iconeC.png";
 import Fakecarousel from "@/assets/images/icons/ImageBg.png";
