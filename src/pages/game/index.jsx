@@ -1,10 +1,11 @@
 import Album from "@/components/Album";
 import DraggableSticker from "@/components/DraggableSticker";
 import ModalPremierDay from "@/components/ModalPremierDay";
-import AuthContext from "@/contexts/authContext";
+import GameContext from "@/contexts/gameContext";
 import useRefCallback from "@/hooks/useRefCallback";
 import Template from "@/layouts/GameLayout";
 import API from '@/services/api';
+import { getAPIClient } from "@/services/axios";
 import { Aa, ButtonAnimate } from "@/styles/modals/AlertStyles";
 import {
   CarouselAndTitleContainer, CarouselParent, CarouselTitle,
@@ -48,7 +49,7 @@ const responsive = {
 
 export default function Home({userData}) {
 
-  const { setLoad, isMobile, setIsMobile } = useContext(AuthContext);
+  const { setLoad, isMobile, setIsMobile } = useContext(GameContext);
   const [album, setAlbum] = useState(null); //Figurinhas do album (coladas)
   const [stickers, setStickers] = useState([]); //Figurinhas do player para se coladas no album (coladas)
   const [modalPremier, setModalPremier] = useState(false); //modal premio dia
@@ -108,36 +109,6 @@ export default function Home({userData}) {
     }
   }
 
-  /* useEffect(() => {
-    async function setConfigs() {
-      var windowWidth = window.innerWidth;
-      if (windowWidth <= 1200) {
-        await sessionStorage.setItem("isMobile", "true");
-        setIsMobile(true);
-      } else {
-        await sessionStorage.setItem("isMobile", "false");
-        setIsMobile(false);
-      }
-      /*  var containter = document.getElementById("thisContainer");
-      containter.addEventListener("resize", function () {
-        sizeOfThings();
-      }); 
-      window.addEventListener("resize", function () {
-        sizeOfThings();
-      });
-    }
-    setConfigs();
-  }, []); */
-
-  /*  async function sizeOfThings() {
-    var windowWidth = window.innerWidth;
-    if (windowWidth <= 1200) {
-      await sessionStorage.setItem("isMobile", "true");
-    } else {
-      await sessionStorage.setItem("isMobile", "false");
-    }
-    await localStorage.setItem("reload", "true");
-  } */
 
   const removeUserSticker = (stickerId) => {
     setStickers((items) => items.filter((item) => item.id !== stickerId));
@@ -167,11 +138,7 @@ export default function Home({userData}) {
   return (
     <DndProvider
     backend={isMobile === true ? (TouchBackend) : (HTML5Backend)}
-      /* backend={
-        window.matchMedia("(pointer: coarse)").matches
-          ? TouchBackend
-          : HTML5Backend
-      } */
+
     >
       <Template userData={userData}>
         <ModalPremierDay view={modalPremier}>
@@ -271,8 +238,12 @@ export const getServerSideProps = async (ctx) => {
         permanet: false,
       },
     };
+  } else {
+    const apiClient = getAPIClient(ctx);
+    const { data } = await apiClient.get('players/me');
+    console.log(data);
+    return {
+      props: { userData: data },
+    };
   }
-  return {
-    props: { userData: profile },
-  };
 };

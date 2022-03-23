@@ -3,7 +3,7 @@ import LoginForm from "@/components/LoginForm";
 import Loading from "@/components/pageLoading";
 import Recovery from "@/components/Recovery";
 import RegisterForm from "@/components/RegisterForm";
-import AuthContext from "@/contexts/authContext";
+import GameContext from "@/contexts/gameContext";
 import API from '@/services/api';
 import { parseCookies } from "nookies";
 import React, { useContext, useState } from "react";
@@ -11,7 +11,7 @@ import React, { useContext, useState } from "react";
 export default function Login({userData}) {
   const [modalRecovery, setModalRecovery] = useState(false); //modal recovery
   const [isRegister, setIsRegister] = useState(false);
-  const { load } = useContext(AuthContext);
+  const { load } = useContext(GameContext);
 
   function handleAudioEffectError() {
     let effectError = document.querySelector("#effectError");

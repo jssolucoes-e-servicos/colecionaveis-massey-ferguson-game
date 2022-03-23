@@ -5,6 +5,7 @@ import perfil2 from "@/assets/images/perfil2.png";
 import ModelBanks from "@/components/Influence";
 import Template from "@/layouts/GameLayout";
 import api from "@/services/api";
+import { getAPIClient } from "@/services/axios";
 import Image from "next/image";
 import Router from "next/router";
 import { parseCookies } from "nookies";
@@ -144,9 +145,12 @@ export const getServerSideProps = async (ctx) => {
         permanet: false,
       },
     };
+  } else {
+    const apiClient = getAPIClient(ctx);
+    const { data } = await apiClient.get('players/me');
+    console.log(data);
+    return {
+      props: { userData: data },
+    };
   }
-
-  return {
-   props: { userData: profile },
-  };
 };

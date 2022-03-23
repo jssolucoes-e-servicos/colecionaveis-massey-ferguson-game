@@ -2,7 +2,7 @@ import "@/assets/css/Bank.css";
 import "@/assets/css/launcher.css";
 import "@/assets/css/modalalert.css";
 import BackgroundAudio from "@/components/BackgroundAudio";
-import { AuthProvider } from "@/contexts/authContext";
+import { GameProvider } from "@/contexts/gameContext";
 import Head from "next/head";
 import Script from "next/script";
 import React from "react";
@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "../I18n";
 function MyApp({ Component, pageProps, userData }) {
   return (
-    <AuthProvider>
+    <GameProvider>
       <React.Fragment>
         <Head>
           <title>Colecionáveis Massey Ferguson</title>
@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps, userData }) {
         <Component {...pageProps} />
         <ToastContainer />
       </React.Fragment>
-    </AuthProvider>
+    </GameProvider>
   );
 }
 

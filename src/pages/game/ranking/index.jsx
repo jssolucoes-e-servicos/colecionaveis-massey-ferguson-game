@@ -2,9 +2,10 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import {
   ListPagination, Pagination, PaginationBox
 } from "@/components/Paginations/style";
-import AuthContext from "@/contexts/authContext";
+import GameContext from "@/contexts/gameContext";
 import Template from "@/layouts/GameLayout";
 import API from "@/services/api";
+import { getAPIClient } from "@/services/axios";
 import {
   ContainerRank,
   RankA, Rankform,
@@ -18,7 +19,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 export default function Ranking({userData}) {
-  const { setLoad } = useContext(AuthContext);
+  const { setLoad } = useContext(GameContext);
   const [players, setPlayers] = useState(null);
   const [tops, setTops] = useState(null);
   const [nextPage, setNextPage] = useState(1);
@@ -177,9 +178,12 @@ export const getServerSideProps = async (ctx) => {
         permanet: false,
       },
     };
+  } else {
+    const apiClient = getAPIClient(ctx);
+    const { data } = await apiClient.get('players/me');
+    console.log(data);
+    return {
+      props: { userData: data },
+    };
   }
-
-  return {
-    props: { userData: profile },
-  };
 };

@@ -1,10 +1,8 @@
 import Translator from "@/components/I18n/Translator";
-import authContext from "@/contexts/authContext";
 import api from "@/services/api";
 import AssetsData from "@/services/data.json";
 import React, {
-  createContext,
-  useContext, useEffect,
+  createContext, useEffect,
   useRef, useState
 } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
@@ -19,32 +17,11 @@ import {
 export const AlbumContext = createContext();
 
 export default function Album({ removeUserSticker, data = [], isMobile }) {
-  const context = useContext(authContext);
-  
   const containerRef = useRef();
   const [stickers, setStickers] = useState([]);
   const [userStickers, setUserStickers] = useState([]);
   const [page, setPage] = useState(0);
   const [processClick, setProcessClick] = useState(false);
-
- /*  useEffect(() => {
-    async function conf() {
-      window.addEventListener("resize", function () {
-        resize();
-      });
-    }
-    conf();
-  }, []); */
-
-  /* async function resize() {
-    let reload = await localStorage.getItem("reload");
-    if (reload === "true") {
-      await localStorage.setItem("init", "true");
-      await localStorage.setItem("reload", "false");
-      history.go(0);
-    }
-    console.log("resized");
-  } */
 
   useEffect(() => {
     async function getData() {

@@ -1,8 +1,7 @@
 import loginCSS from "@/assets/css/login.module.css";
-import imgLogin from "@/assets/images/MF_Logo_Red_Grey.png";
 import I18n from "@/components/I18n/I18n";
 import Translator from "@/components/I18n/Translator";
-import AuthContext from "@/contexts/authContext";
+import GameContext from "@/contexts/gameContext";
 import API from "@/services/api";
 import Image from "next/image";
 import Router from "next/router";
@@ -12,9 +11,10 @@ import { useForm } from "react-hook-form";
 import InputMask from "react-input-mask";
 import { toast } from "react-toastify";
 
+
 export default function RegisterForm({ functions }) {
   const { register, handleSubmit } = useForm();
-  const { setLoad } = useContext(AuthContext);
+  const { setLoad } = useContext(GameContext);
 
 const handleRegister = async (data) => {
   if (validate(data)) {
@@ -83,7 +83,7 @@ const handleRegister = async (data) => {
       <div className={loginCSS.form_cadMobo}>
         <div className={loginCSS.sign_G}>
           <div className={loginCSS.login_h2}>
-            <Image className={loginCSS.Logi_img_emnpresa} src={imgLogin} alt="logo" />
+            <Image className={loginCSS.Logi_img_emnpresa} src="/storage/images/brands/MF_Logo_Red_Gray" alt="logo" />
           </div>
           <div className={loginCSS.login_h2}>
             <h2 className={loginCSS.login_txt}>

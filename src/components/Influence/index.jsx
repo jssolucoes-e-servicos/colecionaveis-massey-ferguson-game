@@ -1,35 +1,22 @@
-import React, { useState, useContext } from "react";
-import {
-  ModalFulllB,
-  ModelbankInflu,
-  ModalPage,
-  BtnCloseBank,
-  BtnClosed,
-  ModalTxtB,
-  TxtB,
-  ModalAnimaBooton,
-  InputTxt,
-  InputdIV,
-  ButtonResgate,
-  ModalImB,
-  FotoFiguriPadrao,
-  FotoFiguri,
-  ModalResFull,
-} from "./styles";
 import Fakeimagem from "@/assets/images/icons/ImageBg.png";
 import Fakepacote from "@/assets/images/icons/pacotefigurinha.png";
-
-import { toast } from "react-toastify";
 import Translator from "@/components/I18n/Translator";
+import GameContext from "@/contexts/gameContext";
 import api from "@/services/api";
-import AuthContext from "@/contexts/authContext";
 import AssetsData from "@/services/data.json";
+import React, { useContext, useState } from "react";
+import { toast } from "react-toastify";
+import {
+  BtnCloseBank,
+  BtnClosed, ButtonResgate, FotoFiguri, FotoFiguriPadrao, InputdIV, InputTxt, ModalAnimaBooton, ModalFulllB, ModalImB, ModalPage, ModalResFull, ModalTxtB, ModelbankInflu, TxtB
+} from "./styles";
+
 
 export default function Influecer({
   id = "influencer_modal",
   onClose = () => {},
 }) {
-  const { setLoad } = useContext(AuthContext);
+  const { setLoad } = useContext(GameContext);
   const [figure, setFigure] = useState(null);
   const [fields, setFields] = useState({
     token: "",

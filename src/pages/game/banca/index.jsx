@@ -1,5 +1,3 @@
-import Fakecarousel from "@/assets/images/icons/ImageBg.png";
-import ImgV from "@/assets/images/icons/mcons.png";
 import CarouselPlayer from "@/components/CarouselFiguri";
 import {
   BtnBimage, CardCarro, DCbtns,
@@ -15,9 +13,10 @@ import { BtnVendeBank, TxtBuMb } from "@/components/ModalBank/modbank";
 import {
   ListPagination, Pagination, PaginationBox
 } from "@/components/Paginations/style";
-import AuthContext from "@/contexts/authContext";
+import GameContext from "@/contexts/gameContext";
 import Template from "@/layouts/GameLayout";
-import api from "@/services/api";
+import { default as api } from "@/services/api";
+import { getAPIClient } from "@/services/axios";
 import AssetsData from "@/services/data.json";
 import { parseCookies } from "nookies";
 import React, { useContext, useEffect, useState } from "react";
@@ -41,12 +40,12 @@ const MAX_LEFT = (MAX_ITEMS - 1) / 2;
 
 export default function Stands({userData}) {
   // state of Cont
-  const { setLoad } = useContext(AuthContext);
+  const { setLoad } = useContext(GameContext);
   const [formData, setformData] = useState(formDataInitial);
   const [filtered, setFiltered] = useState(false);
   const [listSales, setListSales] = useState(null);
   const [listFigurePlayer, setListFigurePlayer] = useState(null);
-  /* const [saleDisabled, setSaleDisabled] = useState(true); */
+  const [userLocalData, setUserLocalData] = useState(userData);
   const [selectedSale, setSelectedSale] = useState(null);
   const [modalType, setModalType] = useState("out");
   const [modalBank, setModalBank] = useState(false); //modal pagamento troca bank
@@ -98,6 +97,15 @@ export default function Stands({userData}) {
     } catch (error) {
       setLoad(false);
       toast.error("Falha ao realizar a pesquisa");
+    }
+  }
+
+  const refreshUserData = async () => {
+    try {
+      const { data } = await api.get("players/me");
+      setUserLocalData(data);
+    } catch (error) {
+      toast.info("Olá, uma breve falha ocorreu ao atualizar suas informações na tela, mas tudo está salvo!");
     }
   }
 
@@ -177,7 +185,6 @@ export default function Stands({userData}) {
     } catch (error) {
       setModalBank(false);
       setLoad(false);
-      console.error(error);
       if (modalType === "out") {
         toast.error("Ops! Falha ao concluir a venda.");
       } else {
@@ -336,7 +343,7 @@ export default function Stands({userData}) {
                 </div>
                 <div className="Bank_Valor">
                   <div className="Player_valor">
-                    <span className="Player_V">MP {UserData.cash}</span>
+                    <span className="Player_V">MP {userLocalData?.cash}</span>
                   </div>
                 </div>
               </div>
@@ -368,8 +375,9 @@ export default function Stands({userData}) {
                                   style={{ background: "#810101" }}
                                 >
                                   <BtnBimage
-                                    src={ImgV}
+                                    src="/storage/images/icons/ImageBg.png"
                                     name={item.id}
+                                    style={{ background: "#810101" }}
                                     onClick={handSelectedBuy}
                                     id="teste"
                                   />
@@ -454,13 +462,13 @@ export default function Stands({userData}) {
                           }}
                         >
                           <div className="figuraT">
-                            <img className="Imgcard" src={Fakecarousel} />
+                            <img className="Imgcard" src="/storage/images/icons/ImageBg.png" />
                           </div>
                           <div className="figuraT">
-                            <img className="Imgcard" src={Fakecarousel} />
+                            <img className="Imgcard" src="/storage/images/icons/ImageBg.png" />
                           </div>
                           <div className="figuraT">
-                            <img className="Imgcard" src={Fakecarousel} />
+                            <img className="Imgcard" src="/storage/images/icons/ImageBg.png" />
                           </div>
                         </div>
                       </React.Fragment>
@@ -492,7 +500,7 @@ export default function Stands({userData}) {
                                       data-tip="Vender Figurinha"
                                     >
                                       <BtnBimage
-                                        src={ImgV}
+                                        src="/storage/images/icons/mcons.png"
                                         id={item.id}
                                         data-tip="Vender Figurinha"
                                       />
@@ -528,9 +536,11 @@ export const getServerSideProps = async (ctx) => {
         permanet: false,
       },
     };
+  } else {
+    const apiClient = getAPIClient(ctx);
+    const { data } = await apiClient.get('players/me');
+    return {
+      props: { userData: data },
+    };
   }
-
-  return {
-    props: { userData: profile },
-  };
 };

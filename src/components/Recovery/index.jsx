@@ -1,26 +1,17 @@
-import React, { useState, useContext } from "react";
-import {
-  ModalFulllB,
-  ModelbankInflu,
-  ModalPage,
-  BtnCloseBank,
-  BtnClosed,
-  ModalTxtB,
-  TxtB,
-  InputTxt,
-  InputdIV,
-  ButtonResgate,
-} from "./styles";
-import { toast } from "react-toastify";
-import Translator from "@/components/I18n/Translator";
+import GameContext from "@/contexts/gameContext";
 import api from "@/services/api";
-import AuthContext from "@/contexts/authContext";
+import React, { useContext, useState } from "react";
+import { toast } from "react-toastify";
+import {
+  BtnCloseBank,
+  BtnClosed, ButtonResgate, InputdIV, InputTxt, ModalFulllB, ModalPage, ModalTxtB, ModelbankInflu, TxtB
+} from "./styles";
 
 export default function Recovery({
   id = "recovery_modal",
   onClose = () => {},
 }) {
-  const { setLoad } = useContext(AuthContext);
+  const { setLoad } = useContext(GameContext);
   const [fields, setFields] = useState({
     email: "",
   });

@@ -2,7 +2,7 @@ import loginCSS from "@/assets/css/login.module.css";
 import IconicosImg from "@/assets/images/MF_Logo_Red_Grey.png";
 import I18n from "@/components/I18n/I18n";
 import Translator from "@/components/I18n/Translator";
-import AuthContext from "@/contexts/authContext";
+import GameContext from "@/contexts/gameContext";
 import API from "@/services/api";
 import Image from "next/image";
 import Router from "next/router";
@@ -13,7 +13,7 @@ import { toast } from "react-toastify";
 //
 export default function LoginForm({ functions }) {
   const { register, handleSubmit } = useForm();
-  const { setLoad } = useContext(AuthContext);
+  const { setLoad } = useContext(GameContext);
 
   const handleLogin = async (data) => {
     if (data.email.length > 0 && data.password.length > 0) {
@@ -35,7 +35,6 @@ export default function LoginForm({ functions }) {
           path: '/',
         });
         Router.replace("/game");
-        setLoad(false);
       } catch (error) {
         setLoad(false);
         functions.handleAudioEffectError();

@@ -1,7 +1,8 @@
 import Logoempresa from "@/assets/images/MF_LogoWhite.png";
-import AuthContext from "@/contexts/authContext";
+import GameContext from "@/contexts/gameContext";
 import Template from "@/layouts/GameLayout";
 import api from "@/services/api";
+import { getAPIClient } from "@/services/axios";
 import moment from "moment";
 import Router from "next/router";
 import { parseCookies } from "nookies";
@@ -11,7 +12,7 @@ import { toast } from "react-toastify";
 
 export default function PlayerEdit({userData}) {
 
-  const { setLoad } = useContext(AuthContext);
+  const { setLoad } = useContext(GameContext);
   const [fields, setFields] = useState(userData);
 
   useEffect(() => {
@@ -270,9 +271,12 @@ export const getServerSideProps = async (ctx) => {
         permanet: false,
       },
     };
+  } else {
+    const apiClient = getAPIClient(ctx);
+    const { data } = await apiClient.get('players/me');
+    console.log(data);
+    return {
+      props: { userData: data },
+    };
   }
-
-  return {
-    props: { userData: profile },
-  };
 };

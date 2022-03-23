@@ -262,7 +262,7 @@ export const BtnBimage = styled.img`
   width: 100%;
   max-width: 50%;
   height: 50%;
-  /* background: red; */
+  background: #3c3c3c;
   background-repeat: no-repeat;
   background-size: contain;
   @media (max-width: 900px) {

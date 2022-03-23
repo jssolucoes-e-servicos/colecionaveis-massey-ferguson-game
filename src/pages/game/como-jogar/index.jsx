@@ -1,4 +1,5 @@
 import Template from "@/layouts/GameLayout";
+import { getAPIClient } from "@/services/axios";
 import {
   Container,
   ContainerPlay, PlayA,
@@ -151,9 +152,12 @@ export const getServerSideProps = async (ctx) => {
         permanet: false,
       },
     };
+  } else {
+    const apiClient = getAPIClient(ctx);
+    const { data } = await apiClient.get('players/me');
+    console.log(data);
+    return {
+      props: { userData: data },
+    };
   }
-
-  return {
-    props: { userData: profile },
-  };
 };

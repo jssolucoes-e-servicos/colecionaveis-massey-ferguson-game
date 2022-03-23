@@ -1,14 +1,7 @@
 import React from "react";
 import {
-  FigureTC,
-  DfiguregC,
-  ImgcardC,
-  DobtnC,
-  DobtDC,
-  DobtImageC,
-  TxtcardsC,
-  TxcardC,
-  Txtcard_fillC,
+  DfiguregC, DobtDC,
+  DobtImageC, DobtnC, FigureTC, ImgcardC, TxcardC, TxtcardsC, Txtcard_fillC
 } from "./style";
 
 export default function StandsCard({ img, children }) {

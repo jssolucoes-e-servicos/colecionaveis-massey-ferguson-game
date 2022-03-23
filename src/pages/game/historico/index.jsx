@@ -13,16 +13,17 @@ import ModelSales from "@/components/ModalAfterSales";
 import { Saleschid } from "@/components/ModalAfterSales/styles";
 import ModelBanks from "@/components/ModalBank";
 import { BtnVendeBank, TxtBuMb } from "@/components/ModalBank/modbank";
-import AuthContext from "@/contexts/authContext";
+import GameContext from "@/contexts/gameContext";
 import Template from "@/layouts/GameLayout";
 import api from "@/services/api";
+import { getAPIClient } from "@/services/axios";
 import AssetsData from "@/services/data.json";
 import { parseCookies } from "nookies";
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 export default function Historic({userData}) {
-  const { setLoad } = useContext(AuthContext);
+  const { setLoad } = useContext(GameContext);
   const [listCommon, setListCommon] = useState(null);
   const [listMedium, setListMedium] = useState(null);
   const [listLaunch, setListLaunch] = useState(null);
@@ -30,7 +31,6 @@ export default function Historic({userData}) {
   const [modalBank, setModalBank] = useState(false); //modal pagamento troca bank
   const [modalSales, setModalSales] = useState(false); //modal Pos-pagamento troca bank
   const [selectedSale, setSelectedSale] = useState(null);
-  const [selectedAlbum, setSelectedAlbum] = useState(null);
 
   const [dataToModal, setDataToModal] = useState({
     message: "",
@@ -49,14 +49,7 @@ export default function Historic({userData}) {
         data: { albums },
       } = await api.get(`/albums/historic`);
       console.log(albums);
-      //let albums = [];
-      /*  await data.albums.map((item) => {
-        let figure = {
-          id: item.id,
-          figure: AssetsData.figures[item.figure.id],
-        };
-        albums.push(figure);
-      }); */
+
       if (albums) {
         let dataFilterType1 = albums.filter(function (el) {
           console.log(el);
@@ -564,9 +557,12 @@ export const getServerSideProps = async (ctx) => {
         permanet: false,
       },
     };
+  } else {
+    const apiClient = getAPIClient(ctx);
+    const { data } = await apiClient.get('players/me');
+    console.log(data);
+    return {
+      props: { userData: data },
+    };
   }
-
-  return {
-    props: { userData: profile },
-  };
 };

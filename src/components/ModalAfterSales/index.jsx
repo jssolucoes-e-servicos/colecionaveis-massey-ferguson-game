@@ -1,4 +1,3 @@
-import Logoempresa from "@/assets/images/MF_Logo_Red_Grey.png";
 import Translator from "@/components/I18n/Translator";
 import React, { useEffect } from "react";
 import {
@@ -287,7 +286,7 @@ const ModelAfterSales = ({
       <ModelSaleF>
         <ModalSalesG>
           <React.Fragment>
-            <ModalSalesImage src={Logoempresa} />
+            <ModalSalesImage src="storage/images/brand/MF_Logo_Red_Grey.png" />
             <SalesTxtPA>
               <Translator path="components.congratulations" />
             </SalesTxtPA>
