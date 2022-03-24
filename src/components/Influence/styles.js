@@ -181,6 +181,8 @@ export const InputTxt = styled.input`
   font-size: 20px;
   font-weight: 600;
   border-bottom: solid 1px #ccc;
+  border-style: none;
+  border: 0;
   @media (max-width: 900px) {
     height: 40px;
     font-size: 0.8em;
@@ -231,6 +233,8 @@ export const ButtonResgate = styled.button`
   font-size: 20px;
   letter-spacing: 4px;
   text-decoration: none;
+  border-style: none;
+  border: 0;
   @media (max-width: 1000px) {
     width: 90%;
     font-size: 10px;

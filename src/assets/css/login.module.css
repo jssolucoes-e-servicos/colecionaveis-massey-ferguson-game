@@ -63,7 +63,8 @@ body {
 
 .login_h2 {
   width: 100%;
-  max-width: 100%;
+  /* max-width: 100%; */
+  max-width: 150px;
   padding: 5px 0 0 0;
   text-align: center;
 }
@@ -497,17 +498,13 @@ body {
   transform: translate3d(0, 0, 0);
 }
 
+/* scroll personalizado vermelho game Massey */
 /* ::-webkit-scrollbar {
   width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: linear-gradient(
-    0deg,
-    rgba(255, 0, 0, 1) 0%,
-    rgb(121, 2, 2) 80%,
-    rgb(3, 3, 3) 100%
-  );
+  background: linear-gradient(0deg, rgba(255, 0, 0, 1) 0%, rgb(3, 3, 3) 100%);
 }
 
 ::-webkit-scrollbar-thumb {

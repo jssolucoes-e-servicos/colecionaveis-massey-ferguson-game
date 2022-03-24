@@ -664,6 +664,9 @@
   justify-content: center;
   align-items: center;
   outline: none;
+  border-style: none;
+  border: 0;
+  background-color: transparent;
 }
 .pagination__item--active {
   background: none;

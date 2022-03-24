@@ -1,8 +1,8 @@
 import CarouselPlayer from "@/components/CarouselFiguri";
 import {
-  BtnBimage, CardCarro, DCbtns,
-  DCbtnsB, DobtnFull, ImgCaf, SpanfULL, Spantick, TxtCarCards,
-  TxtTT
+    BtnBimage, CardCarro, DCbtns,
+    DCbtnsB, DobtnFull, ImgCaf, SpanfULL, Spantick, TxtCarCards,
+    TxtTT
 } from "@/components/CarouselFiguri/carouselslider";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import Translator from "@/components/I18n/Translator";
@@ -11,7 +11,7 @@ import { Saleschid } from "@/components/ModalAfterSales/styles";
 import ModelBanks from "@/components/ModalBank";
 import { BtnVendeBank, TxtBuMb } from "@/components/ModalBank/modbank";
 import {
-  ListPagination, Pagination, PaginationBox
+    ListPagination, Pagination, PaginationBox
 } from "@/components/Paginations/style";
 import GameContext from "@/contexts/gameContext";
 import Template from "@/layouts/GameLayout";
@@ -21,9 +21,9 @@ import AssetsData from "@/services/data.json";
 import { parseCookies } from "nookies";
 import React, { useContext, useEffect, useState } from "react";
 import {
-  BsCheckAll, BsChevronLeft,
-  BsChevronRight,
-  BsStarFill
+    BsCheckAll, BsChevronLeft,
+    BsChevronRight,
+    BsStarFill
 } from "react-icons/bs";
 import { toast } from "react-toastify";
 import ReactTooltip from "react-tooltip";
@@ -375,7 +375,7 @@ export default function Stands({userData}) {
                                   style={{ background: "#810101" }}
                                 >
                                   <BtnBimage
-                                    src="/storage/images/icons/ImageBg.png"
+                                    src="/storage/images/icons/mcons.png"
                                     name={item.id}
                                     style={{ background: "#810101" }}
                                     onClick={handSelectedBuy}

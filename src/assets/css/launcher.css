@@ -1013,7 +1013,7 @@ animation-delay: 0.75s;*/
   width: 100%;
   max-width: 100%;
 }
-.player-full {
+.Player-full {
   width: 100%;
   max-width: 100%;
   display: flex;
@@ -1025,7 +1025,8 @@ animation-delay: 0.75s;*/
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 100%;
+  max-width: 150px;
+  /* max-width: 100%; */
 }
 .Player-user {
   width: 100%;

@@ -27,13 +27,14 @@ export const ItemsCarrocel = styled.div`
 `;
 export const CardCarro = styled.section`
   flex: none;
-
   width: 130px;
   height: 99%;
   scroll-snap-align: start;
   margin-left: 6px;
   background: #fff;
   margin-bottom: 0;
+  border-style: none;
+  border: 0;
   :hover {
     cursor: move;
     border: solid 3px red;

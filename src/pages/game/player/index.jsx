@@ -61,16 +61,16 @@ export default function Player({userData}) {
                   <Image className="Player-user" src={Logoempresa} alt="Users" />
                 </div>
               </div>
-              <div className="player-full">
+              <div className="Player-full">
                 <span className="player-NameUser">{userData.name}</span>
               </div>
-              <div className="player-full">
+              <div className="Player-full">
                 <span className="player-spanP">{userData.email}</span>
               </div>
-              <div className="player-full">
+              <div className="Player-full">
                 <span className="player-spanP">{userData.phone}</span>
               </div>
-              <div className="player-full">
+              <div className="Player-full">
                 <button
                   className="Btn-player"
                   type="button"
@@ -91,7 +91,7 @@ export default function Player({userData}) {
                   Resgatar prêmio
                 </button>
               </div>
-              <div className="player-full">
+              <div className="Player-full">
                 <a
                   className="player-spanP"
                   href="https://www.agcocorp.com/privacy-cookies-pt.html"

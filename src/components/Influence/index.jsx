@@ -1,4 +1,3 @@
-import Fakeimagem from "@/assets/images/icons/ImageBg.png";
 import Fakepacote from "@/assets/images/icons/pacotefigurinha.png";
 import Translator from "@/components/I18n/Translator";
 import GameContext from "@/contexts/gameContext";
@@ -7,8 +6,8 @@ import AssetsData from "@/services/data.json";
 import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import {
-  BtnCloseBank,
-  BtnClosed, ButtonResgate, FotoFiguri, FotoFiguriPadrao, InputdIV, InputTxt, ModalAnimaBooton, ModalFulllB, ModalImB, ModalPage, ModalResFull, ModalTxtB, ModelbankInflu, TxtB
+    BtnCloseBank,
+    BtnClosed, ButtonResgate, FotoFiguri, FotoFiguriPadrao, InputdIV, InputTxt, ModalAnimaBooton, ModalFulllB, ModalImB, ModalPage, ModalResFull, ModalTxtB, ModelbankInflu, TxtB
 } from "./styles";
 
 
@@ -104,7 +103,8 @@ export default function Influecer({
                 {figure != null ? (
                   <FotoFiguri src={figure} id="InfluencePremier" />
                 ) : (
-                  <FotoFiguri src={Fakeimagem} />
+                  // <FotoFiguri src={Fakeimagem} />
+                  <FotoFiguri src="/storage/images/icons/ImageBg.png" />
                 )}
               </ModalImB>
             </ModalAnimaBooton>
