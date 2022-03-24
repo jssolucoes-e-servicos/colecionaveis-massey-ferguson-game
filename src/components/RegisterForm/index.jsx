@@ -3,7 +3,6 @@ import I18n from "@/components/I18n/I18n";
 import Translator from "@/components/I18n/Translator";
 import GameContext from "@/contexts/gameContext";
 import API from "@/services/api";
-import Image from "next/image";
 import Router from "next/router";
 import { setCookie } from 'nookies';
 import React, { useContext } from "react";
@@ -83,7 +82,7 @@ const handleRegister = async (data) => {
       <div className={loginCSS.form_cadMobo}>
         <div className={loginCSS.sign_G}>
           <div className={loginCSS.login_h2}>
-            <Image className={loginCSS.Logi_img_emnpresa} src="/storage/images/brands/MF_Logo_Red_Gray" alt="logo" />
+            {/* <Image className={loginCSS.Logi_img_emnpresa} src="/storage/images/brands/MF_Logo_Red_Gray" alt="logo" /> */}
           </div>
           <div className={loginCSS.login_h2}>
             <h2 className={loginCSS.login_txt}>
@@ -202,7 +201,7 @@ const handleRegister = async (data) => {
               <button
                 type="submit"
                 onClick={functions.handleRegister}
-                className={[loginCSS.submit, loginCSS.effectClick, loginCSS.login_button]}
+                className={[loginCSS.login_button]}
               >
                 <Translator path="register.button" />
               </button>

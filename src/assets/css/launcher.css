@@ -520,6 +520,7 @@ animation-delay: 0.75s;*/
   height: 100%;
   background-color: #222425;
   color: #fff;
+  border: 0;
 }
 .BtnMobileA:hover {
   background-color: #292929;

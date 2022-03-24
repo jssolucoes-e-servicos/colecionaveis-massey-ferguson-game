@@ -1,3 +1,4 @@
+import GameContext from '@/contexts/gameContext';
 import Template from "@/layouts/GameLayout";
 import { getAPIClient } from "@/services/axios";
 import {
@@ -6,8 +7,18 @@ import {
   PlayBlocoTXT, Playdas, PlayImaageM, PlayImage, PlayTXT
 } from "@/styles/pages/howplayStyle";
 import { parseCookies } from "nookies";
-import React from "react";
-export default function Howplay({userData}) {
+import React, { useContext, useEffect } from "react";
+
+export default function Howplay({ userData }) {
+  const { setLoad } = useContext(GameContext);
+
+  useEffect(() => {
+    setLoad(false);
+  }, [])
+  
+
+
+
   return (
     <Template userData={userData}>
       <Container>
@@ -155,7 +166,6 @@ export const getServerSideProps = async (ctx) => {
   } else {
     const apiClient = getAPIClient(ctx);
     const { data } = await apiClient.get('players/me');
-    console.log(data);
     return {
       props: { userData: data },
     };

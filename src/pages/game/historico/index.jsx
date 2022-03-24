@@ -40,7 +40,9 @@ export default function Historic({userData}) {
 
   useEffect(() => {
     getData();
+    setLoad(false);
   }, []);
+
 
   async function getData() {
     try {
@@ -48,7 +50,7 @@ export default function Historic({userData}) {
       const {
         data: { albums },
       } = await api.get(`/albums/historic`);
-      console.log(albums);
+
 
       if (albums) {
         let dataFilterType1 = albums.filter(function (el) {
@@ -560,7 +562,6 @@ export const getServerSideProps = async (ctx) => {
   } else {
     const apiClient = getAPIClient(ctx);
     const { data } = await apiClient.get('players/me');
-    console.log(data);
     return {
       props: { userData: data },
     };

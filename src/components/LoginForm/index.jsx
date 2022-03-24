@@ -48,7 +48,7 @@ export default function LoginForm({ functions }) {
     <div className={[loginCSS.form, loginCSS.sign_in]} id="Logomobo">
       <div className={loginCSS.sign_G}>
         <div className={loginCSS.login_h2}>
-          <Image className={loginCSS.iconicos} src={IconicosImg} alt="logo" />
+          <Image className={loginCSS.iconicos} src={IconicosImg} alt="logo" style={{width:50}}/>
         </div>
         <form onSubmit={handleSubmit(handleLogin)}>
           <label className={loginCSS.login_label}>
@@ -75,7 +75,7 @@ export default function LoginForm({ functions }) {
             </div>
           </label>
           <button
-            className={[loginCSS.submit, loginCSS.effectLogin, loginCSS.login_button]}
+            className={[loginCSS.login_button]}
             type="submit"
           >
             <Translator path="login.button" />
@@ -98,7 +98,7 @@ export default function LoginForm({ functions }) {
           </div>
           <div className={loginCSS.Cadt2}>
             <button
-  className = { loginCSS.BtL }
+                 className = { loginCSS.BtL }
               onClick={() => {
                 functions.setModalRecovery(true);
               }}

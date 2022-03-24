@@ -16,23 +16,18 @@ body {
 } */
 
 .login_wrap {
-  height: auto;
+  height: 100%;
   margin: 0;
   padding: 0;
-
   overflow-y: scroll;
   background-color: #000;
   background-image: url("../images/bgd.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: rgb(240, 229, 194); */
-  /* background: -webkit-linear-gradient(left, #fff, #fff); */
   font-family: "Roboto", sans_serif;
-  /* background-image: url("../images/bgd.png"); */
   background-size: 100% 100%;
   min-height: 100vh;
   background-repeat: no-repeat;
@@ -52,17 +47,13 @@ body {
 }
 
 .form {
+  /* não esta sendo utilizado por isso esta com erro no layout desajustado ver agora  */
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   width: 640px;
   height: 100%;
-  /* padding: 10px 30px; */
-  /*   -webkit-transition: -webkit-transform 0.8s ease-in-out;
-  transition: -webkit-transform 0.8s ease-in-out;
-  transition: transform 0.8s ease-in-out;
-  transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out; */
 }
 
 #formcads {
@@ -204,13 +195,25 @@ body {
   color: #fff;
   font-size: 15px;
   cursor: pointer;
+  /* adicionados fernando */
+  background: #000;
+  font-family: "Roboto", sans_serif;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-family: "Roboto", sans_serif;
+  background: #000;
+  animation: animate 20s linear infinite;
 }
-
+.login_button:hover {
+  transition: all 0.2s ease-in-out;
+  background: #660303;
+}
 #btnsubcad {
   margin-top: 0;
   margin-bottom: 0px;
 }
 
+/* apagar classe submit caso não for usar mais no login */
 .submit {
   margin-top: 40px;
   margin-bottom: 30px;
@@ -287,15 +290,16 @@ body {
 
 .sign_G {
   width: 100%;
-  max-width: 55%;
+  max-width: 350px;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 10px 10px;
-  /* min-height: 95%; */
   height: auto;
-  /* height: auto; */
   background-color: rgb(255 255 255 / 0.48);
-  /* background-color: rgb(255 255 255 / 0.18); */
   background-color: rgb(255 255 255 / 67%);
-  /* margin-left: 10%; */
   border-radius: 20px;
 }
 #Cads {
@@ -568,7 +572,8 @@ body {
     max-width: 100%;
   }
   .login_wrap {
-    min-height: 650px;
+    margin: 0;
+    height: 100%;
   }
   .cont {
     width: 100%;
@@ -584,7 +589,8 @@ body {
   }
   .sign_G {
     width: 100%;
-    max-width: 95%;
+    max-width: 100%;
+    min-height: 500px;
   }
   .sub-cont {
     display: flex;

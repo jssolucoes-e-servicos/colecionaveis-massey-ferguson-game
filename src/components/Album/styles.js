@@ -53,6 +53,8 @@ export const Controllers = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 0;
+  background: transparent;
   :last-child {
     right: -70px;
     bottom: 50%;

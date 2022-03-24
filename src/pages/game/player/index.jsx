@@ -3,23 +3,28 @@ import Logoempresa from "@/assets/images/MF_LogoWhite.png";
 import perfil1 from "@/assets/images/perfil1.png";
 import perfil2 from "@/assets/images/perfil2.png";
 import ModelBanks from "@/components/Influence";
+import GameContext from "@/contexts/gameContext";
 import Template from "@/layouts/GameLayout";
 import api from "@/services/api";
 import { getAPIClient } from "@/services/axios";
 import Image from "next/image";
 import Router from "next/router";
 import { parseCookies } from "nookies";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 export default function Player({userData}) {
+  const { setLoad } = useContext(GameContext);
+
+ 
   const [modalinfluence, setmodalInfluence] = useState(false); //modal pagamento troca bank
 
   function ModalInfluences() {
     setmodalInfluence(true);
   }
-
+  
   useEffect(() => {
     getData();
+    setLoad(false);
   }, []);
 
   const [signed, setSigned] = useState();

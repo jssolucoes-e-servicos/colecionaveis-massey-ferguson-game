@@ -241,7 +241,6 @@ export const getServerSideProps = async (ctx) => {
   } else {
     const apiClient = getAPIClient(ctx);
     const { data } = await apiClient.get('players/me');
-    console.log(data);
     return {
       props: { userData: data },
     };
