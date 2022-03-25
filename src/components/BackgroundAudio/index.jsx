@@ -1,14 +1,9 @@
 import React, { useEffect } from "react";
 
-export default function BackgroundAudio({audio_play, id}) {
+export default function BackgroundAudio({audio_play}) {
    useEffect(() => {
-    function load() {
-      if (id !== 0) {
-        handleAudioBackground();
-      }
-    }
-    load();
-  }, [audio_play, id]);
+     handleAudioBackground();
+  }, [audio_play]);
 
   function handleAudioBackground() {
     const audioBackground = document.querySelector("#audioBackground");

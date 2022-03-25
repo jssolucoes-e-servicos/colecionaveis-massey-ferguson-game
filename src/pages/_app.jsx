@@ -1,7 +1,6 @@
 import "@/assets/css/Bank.css";
 import "@/assets/css/launcher.css";
 import "@/assets/css/modalalert.css";
-import BackgroundAudio from "@/components/BackgroundAudio";
 import { GameProvider } from "@/contexts/gameContext";
 import Head from "next/head";
 import Script from "next/script";
@@ -11,7 +10,8 @@ import "react-multi-carousel/lib/styles.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../I18n";
-function MyApp({ Component, pageProps, userData }) {
+function MyApp({ Component, pageProps }) {
+ 
   return (
     <GameProvider>
       <React.Fragment>
@@ -25,11 +25,6 @@ function MyApp({ Component, pageProps, userData }) {
         ></Script>
         <Script src="https://code.jquery.com/jquery-3.5.1.js"></Script>
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></Script>
-        {userData && (
-          <BackgroundAudio audio_play={userData.audio_play} id={ userData !== null ? userData.id : 0}/>
-        )}
-        {/*  */}
-        {/* <EffectClickAudio /> */}
         <Component {...pageProps} />
         <ToastContainer />
       </React.Fragment>

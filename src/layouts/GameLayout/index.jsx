@@ -30,14 +30,14 @@ export default function Template({ children, userData }) {
     async function setConfigs() {
       //verifield is the Rules Play is accepted
       if (localStorage.getItem("init") === "true") {
-        (userData.rules_accept === 1) ? (setAcceptedRule("true")) : setAcceptedRule("false");
-        (userData.rules_accept === 1) ? localStorage.setItem("cmf-ar", "true") : localStorage.setItem("cmf-ar", "false");
+        (userData.rules_accept === true) ? (setAcceptedRule("true")) : (setAcceptedRule("false"));
+        (userData.rules_accept === true) ? localStorage.setItem("cmf-ar", "true") : localStorage.setItem("cmf-ar", "false");
       } else {
         const acepted = localStorage.getItem("cmf-ar");
         setAcceptedRule(acepted);
       }
       //Verify watch status of play audio
-      (localStorage.getItem("cmg-ap") === "true") ? setPlayAudio(true) : setPlayAudio(false);
+      (localStorage.getItem("cmf-ap") === "true") ? setPlayAudio(true) : setPlayAudio(false);
       //Verify and active in EventListnner a monitor of sizing window
       setLoad(false);
       var windowWidth = window.innerWidth;
@@ -99,6 +99,7 @@ export default function Template({ children, userData }) {
       localStorage.setItem("cmf-ap", "true");
       setPlayAudio(true);
     }
+     handleAudioBackground();
   }
 
   async function executeLogout() {
@@ -126,6 +127,20 @@ export default function Template({ children, userData }) {
       btn.style.display = "flex";
     }
   }
+
+function handleAudioBackground() {
+    const audioBackground = document.querySelector("#audioBackground");
+  if (playAudio === true) {
+      audioBackground.volume = 0.04;
+      audioBackground.play();
+      
+  } else {
+      audioBackground.volume = 0.01;
+      audioBackground.pause();
+    }
+  }
+
+
   return (
     <React.Fragment>
       {isLoadingApp === true ? <AppLoading /> : <React.Fragment />}
@@ -134,6 +149,12 @@ export default function Template({ children, userData }) {
       ) : (
         <React.Fragment />
       )}
+       <audio
+        id="audioBackground"
+        loop
+        autoPlay={true}
+        src="https://3sdigital.com.br/videovaltra/audiogame/Kingdom-sticks.mp3"
+      />
       <section className="containerlauncher">
         <div className="Launchercontainer">
           <div className="MenuMobileA" onClick={Segmobile}>

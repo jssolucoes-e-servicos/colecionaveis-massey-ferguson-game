@@ -1,5 +1,6 @@
 import Translator from "@/components/I18n/Translator";
 import GameContext from '@/contexts/gameContext';
+import api from '@/services/api';
 import Link from 'next/link';
 import Router from "next/router";
 import React, { useContext } from "react";
@@ -10,12 +11,12 @@ import {
 export default function MenuMobile({ id }) {
   const {setLoad}=useContext(GameContext)
 
-  async function executeLogout() {
+ async function executeLogout() {
     setLoad(true);
-    await API.post("logout");
+    await api.post("logout");
     destroyCookie(null, 'cmf-00');
     destroyCookie(null, 'cmf-01');  
-    Router.replace("/login");
+    Router.push("/login");
     setLoad(false);
   }
 

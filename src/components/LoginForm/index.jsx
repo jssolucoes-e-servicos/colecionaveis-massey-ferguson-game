@@ -60,7 +60,7 @@ export default function LoginForm({ functions }) {
             <div className={loginCSS.login_separation}>
               <input
                 type="email"
-                defaultValue="sorrentino@sorrentino.com"
+                defaultValue=""
                 autoComplete="off"
                 {...register("email", { required: true })}
                 className={loginCSS.login_input}
@@ -72,7 +72,7 @@ export default function LoginForm({ functions }) {
             <div className={loginCSS.login_separation}>
               <input
                 type="password"
-                defaultValue="123"
+                defaultValue=""
                 placeholder="senha"
                 className={loginCSS.login_input}
                 {...register("password", { required: true })}
