@@ -40,7 +40,7 @@ export default function Page8({ stickers, userStickers }) {
             </PageDescription> */}
           </VidTxt>
 
-          <BoxxT style={{ marginTop: "2vw" }}>
+          <BoxxT style={{ marginTop: "0vw" }}>
             <Boxcards>
               <Boxborder>
                 <Sticker

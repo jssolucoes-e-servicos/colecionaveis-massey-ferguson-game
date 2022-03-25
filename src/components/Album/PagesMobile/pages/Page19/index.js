@@ -23,8 +23,8 @@ export default function Page18({ stickers, userStickers }) {
 
   const title = "Colhemos muito mais que resultados";
   const description =
-    "Isso porque nos últimos 175 anos colhemos parcerias, trabalho duro e uma revolução que se iniciou lá atrás, quando a Massey-Harris começou um legado. Hoje, nossas colheitadeiras continuam levando para o campo muita tecnologia e eficiência.";
-
+    "Hoje, nossas colheitadeiras continuam levando para o campo muita tecnologia e eficiência.";
+  const descriptionfinal = "Obrigada por fazer parte disso! ";
   return (
     <PageContainer background={AssetsDataPage.pages.page19}>
       <PageHalf>
@@ -32,12 +32,18 @@ export default function Page18({ stickers, userStickers }) {
           style={{ justifyContent: "center", alignItems: "center" }}
         >
           <VidTxt>
-            {/* <PageTitle>{title}</PageTitle>
-            <PageDescription style={{ maxWidth: "90%", marginTop: "1vw" }}>
+            {/* <PageTitle>{title}</PageTitle>*/}
+            <PageDescription style={{ maxWidth: "90%", marginTop: "3vw" }}>
               {description.substr(0, 110)}
+            </PageDescription>
+            {/* <PageDescription style={{ maxWidth: "90%", marginTop: "1vw" }}>
+              {descriptionfinal.substr(0, 110)}
             </PageDescription> */}
+            <PageTitle style={{ marginTop: "1vw" }}>
+              {descriptionfinal}
+            </PageTitle>
           </VidTxt>
-          <BoxxT style={{ marginTop: "8vw" }}>
+          <BoxxT style={{ marginTop: "0vw" }}>
             <Boxcards>
               <Boxborder>
                 <Sticker

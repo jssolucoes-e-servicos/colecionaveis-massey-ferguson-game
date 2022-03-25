@@ -1,21 +1,8 @@
 import React from "react";
 import AssetsDataPage from "./page10.json";
 import AssetsData from "@/services/data.json";
-import {
-  StickerContainerP3,
-  BoxxT,
-  Boxcards,
-  Boxborder,
-  Boxs,
-  PPDescription,
-} from "./styles";
-import {
-  PageContainer,
-  PageHeaderMobile,
-  PageTitle,
-  PageDescription,
-  PageHalf,
-} from "../styles";
+import { BoxxT, Boxcards, Boxborder, Boxs, PPDescription } from "./styles";
+import { PageContainer, PageHeaderMobile, PageHalf } from "../styles";
 
 import { Sticker as StickerBase, getSticker } from "../../index";
 
@@ -29,11 +16,9 @@ export default function Page10({ stickers, userStickers }) {
 
   if (!stickers?.length) return null;
 
-  const title = "O futuro já começou";
-  const description =
-    "• Em 2020, os modelos MF 6714 e o MF 6714 R Dyna-4 chegaram para levar muita tecnologia pro campo.";
+  const description = "• Os MF 6714 e 6714 R Dyna-4 trouxeram mais tecnologia.";
   const description2 =
-    "• A Série de tratores MF 7300 Dyna-3 é ideal para o trabalho pesado da produção de cana, arroz e grãos.";
+    "• A Série MF 7300 Dyna-3 é ideal para o trabalho pesado.";
   return (
     //background={AssetsData.album.page3Bg}
     <PageContainer background={AssetsDataPage.pages.page10}>
@@ -44,22 +29,37 @@ export default function Page10({ stickers, userStickers }) {
           <VidTxt>
             <div
               style={{
+                width: "100%",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 backgroundImage: `url("${AssetsData.album.page3}")`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "100% 100%",
-                height: "80px",
+                height: "60px",
                 flexDirection: "column",
-                padding: "12px 0px 0px 1px",
+                padding: "10px 0px 0px 0px",
               }}
             >
               {/* <PageTitle>{title}</PageTitle> */}
-              <PPDescription style={{ maxWidth: "90%", marginTop: 0 }}>
+              <PPDescription
+                style={{
+                  maxWidth: "90%",
+                  marginTop: 0,
+                  textAlign: "center",
+                  fontSize: 10,
+                }}
+              >
                 {description}
               </PPDescription>
-              <PPDescription style={{ maxWidth: "90%", marginTop: -12 }}>
+              <PPDescription
+                style={{
+                  maxWidth: "90%",
+                  marginTop: -12,
+                  textAlign: "center",
+                  fontSize: 10,
+                }}
+              >
                 {description2}
               </PPDescription>
             </div>

@@ -36,7 +36,7 @@ export default function Page14({ stickers, userStickers }) {
               {description}
             </PageDescription> */}
           </VidTxt>
-          <Boxs style={{ marginTop: "10vw" }}>
+          <Boxs style={{ marginTop: "0vw" }}>
             <Sticker
               multi={true}
               style={{ marginTop: 0 }}
@@ -48,7 +48,7 @@ export default function Page14({ stickers, userStickers }) {
               description="Non nostrud consequat tempor amet."
             />
           </Boxs>
-          <Boxs style={{ marginTop: 5 }}>
+          <Boxs style={{ marginTop: 0 }}>
             <Sticker
               multi={true}
               style={{ marginTop: 0 }}

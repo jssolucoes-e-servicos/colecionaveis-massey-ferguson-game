@@ -21,7 +21,7 @@ export default function Page15({ stickers, userStickers }) {
 
   const title = "Aquele parceiro que mais trabalha";
   const description =
-    "Entre o preparo do solo e a colheita, muita coisa acontece na safra e uma delas é certeza: o seu pulverizador vai trabalhar muito, pois essa é a máquina que mais entra na lavoura.";
+    "Muita coisa acontece na safra e uma delas é certeza: o seu pulverizador vai trabalhar demais.";
 
   return (
     <PageContainer background={AssetsDataPage.pages.page16}>
@@ -29,14 +29,14 @@ export default function Page15({ stickers, userStickers }) {
         <PageHeaderMobile
           style={{ justifyContent: "center", alignItems: "center" }}
         >
-          <VidTxt>
+          <VidTxt style={{ marginTop: "0vw" }}>
             <PageTitle>{title}</PageTitle>
             <PageDescription style={{ maxWidth: "90%", marginTop: "1vw" }}>
               {description}
             </PageDescription>
           </VidTxt>
 
-          <Boxs style={{ marginTop: 20 }}>
+          <Boxs style={{ marginTop: "0vw" }}>
             <Sticker
               multi={true}
               style={{ marginTop: 0 }}
@@ -44,7 +44,7 @@ export default function Page15({ stickers, userStickers }) {
               title="MF 8225"
               year={1961}
               obtained={userStickers.includes(sticker49.id)}
-              description="Non nostrud consequat tempor amet."
+              description=""
             />
             <Sticker
               multi={true}
@@ -52,7 +52,7 @@ export default function Page15({ stickers, userStickers }) {
               sticker={sticker50}
               year={1961}
               obtained={userStickers.includes(sticker50.id)}
-              description="Non nostrud consequat tempor amet."
+              description=""
             />
           </Boxs>
         </PageHeaderMobile>

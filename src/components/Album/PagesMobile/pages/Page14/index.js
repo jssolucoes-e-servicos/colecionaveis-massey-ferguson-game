@@ -1,20 +1,7 @@
 import React from "react";
 import AssetsDataPage from "./page14.json";
-import {
-  StickerContainerP3,
-  StickerContainerP3B,
-  Boxs,
-  StickerCard,
-  StickerP3B,
-  StickerContainer,
-} from "./styles";
-import {
-  PageContainer,
-  PageHeaderMobile,
-  PageTitle,
-  PageDescription,
-  PageHalf,
-} from "../styles";
+import { Boxs } from "./styles";
+import { PageContainer, PageHeaderMobile, PageHalf } from "../styles";
 
 import { Sticker as StickerBase, getSticker } from "../../index";
 
@@ -26,10 +13,6 @@ export default function Page13({ stickers, userStickers }) {
   const sticker45 = getSticker(45, stickers);
 
   if (!stickers?.length) return null;
-
-  const title = " Há 6 décadas de olho no futuro";
-  const description =
-    "2021 é o ano de celebrar os 60 anos de Massey Ferguson no Brasil. São muitas histórias, parcerias e evolução de uma trajetória que começou lá atrás. Vamos relembrar?";
 
   return (
     <PageContainer background={AssetsDataPage.pages.page14}>
@@ -43,7 +26,7 @@ export default function Page13({ stickers, userStickers }) {
               {description}
             </PageDescription> */}
           </VidTxt>
-          <Boxs style={{ marginTop: "10vw" }}>
+          <Boxs style={{ marginTop: "0vw" }}>
             <Sticker
               multi={true}
               style={{ marginTop: 0 }}
@@ -55,7 +38,7 @@ export default function Page13({ stickers, userStickers }) {
               description="Non nostrud consequat tempor amet."
             />
           </Boxs>
-          <Boxs style={{ marginTop: 5 }}>
+          <Boxs style={{ marginTop: 0 }}>
             <Sticker
               multi={true}
               style={{ marginTop: 0 }}

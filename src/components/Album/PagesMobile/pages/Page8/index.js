@@ -24,7 +24,7 @@ export default function Page7({ stickers, userStickers }) {
 
   const title = "Essa família não para";
   const description =
-    "• As séries MF 4300 e 4400 são clássicos da Massey, aliando versatilidade, resistência e muita robustez.";
+    "• MF 4300 e 4400 são clássicos, versáteis e resistentes.";
 
   return (
     //background={AssetsDataPage.pages.pages7}
@@ -34,26 +34,33 @@ export default function Page7({ stickers, userStickers }) {
           style={{ justifyContent: "center", alignItems: "center" }}
         >
           <VidTxt>
-            <PageTitle>{title}</PageTitle>
+            <PageTitle style={{ fontSize: 7, marginTop: "4vw" }}>
+              {title}
+            </PageTitle>
             {/* <PageDescription style={{ maxWidth: "90%", marginTop: "0.5vw" }}>
               {description.substr(0, 110)}
             </PageDescription> */}
 
             <div
               style={{
+                marginTop: 5,
+                width: "100%",
                 display: "flex",
+                textAlign: "center",
                 justifyContent: "center",
                 alignItems: "center",
                 backgroundImage: `url("${AssetsData.album.page3}")`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "100% 100%",
-                height: "auto",
+                height: "20vw",
                 flexDirection: "column",
                 padding: "8px 0px 0px 1px",
               }}
             >
               {/* <PageTitle>{title}</PageTitle> */}
-              <PPDescription style={{ maxWidth: "100%", marginTop: 0 }}>
+              <PPDescription
+                style={{ maxWidth: "100%", marginTop: 0, fontSize: 10 }}
+              >
                 {description}
               </PPDescription>
             </div>

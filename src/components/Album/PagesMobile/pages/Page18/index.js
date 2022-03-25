@@ -22,7 +22,7 @@ export default function Page17({ stickers, userStickers }) {
 
   const title = "Colhemos muito mais que resultados";
   const description =
-    "Isso porque nos últimos 175 anos colhemos parcerias, trabalho duro e uma revolução que se iniciou lá atrás, quando a Massey-Harris começou um legado. Hoje, nossas colheitadeiras continuam levando para o campo muita tecnologia e eficiência.";
+    "Nos últimos 175 anos colhemos parcerias e uma revolução que se iniciou com a Massey-Harris. ";
 
   return (
     <PageContainer background={AssetsDataPage.pages.page18}>

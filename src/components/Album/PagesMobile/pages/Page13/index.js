@@ -1,6 +1,6 @@
 import React from "react";
 import AssetsDataPage from "./page13.json";
-import { StickerContainerP3, BoxxT, Boxcards, Boxborder, Boxs } from "./styles";
+import { BoxxT, Boxcards, Boxborder, Boxs } from "./styles";
 import {
   PageContainer,
   PageHeaderMobile,
@@ -22,7 +22,7 @@ export default function Page12({ stickers, userStickers }) {
 
   const title = "Se separados são parceiros, imagina juntos";
   const description =
-    "No campo, o trabalho sempre rende mais quando temos a parceria certa. Com as máquinas, isso não poderia ser diferente e quem vive do campo entende bem. É por isso que você sempre pode contar com uma dupla que vai te fazer produzir muito mais.";
+    "O trabalho é melhor com a parceria certa. E temos uma dupla que vai te fazer produzir muito mais.";
 
   return (
     <PageContainer background={AssetsDataPage.pages.page12}>
@@ -31,7 +31,7 @@ export default function Page12({ stickers, userStickers }) {
           style={{ justifyContent: "center", alignItems: "center" }}
         >
           <VidTxt>
-            <PageTitle>{title}</PageTitle>
+            <PageTitle style={{ marginTop: "4vw" }}>{title}</PageTitle>
             <PageDescription style={{ maxWidth: "90%", marginTop: "1vw" }}>
               {description.substr(0, 110)}
             </PageDescription>

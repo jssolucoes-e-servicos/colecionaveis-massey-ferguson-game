@@ -1,13 +1,6 @@
 import React from "react";
 import AssetsDataPage from "./page10.json";
-import {
-  StickerContainerP3,
-  StickerContainerP3B,
-  Boxs,
-  StickerCard,
-  StickerP3B,
-  StickerContainer,
-} from "./styles";
+import { Boxs } from "./styles";
 import {
   PageContainer,
   PageHeaderMobile,
@@ -26,10 +19,7 @@ export default function Page9({ stickers, userStickers }) {
   const sticker32 = getSticker(32, stickers);
 
   if (!stickers?.length) return null;
-
   const title = "O futuro já começou";
-  const description =
-    "60 anos se passaram e, de repente, a gente fez uma revolução no campo e estamos mais conectados com o futuro do que nunca. E isso, o agricultor que faz com o coração sabe bem, pois pode confiar demais nas nossas máquinas.";
 
   return (
     <PageContainer background={AssetsDataPage.pages.page10}>
@@ -38,7 +28,7 @@ export default function Page9({ stickers, userStickers }) {
           style={{ justifyContent: "center", alignItems: "center" }}
         >
           <VidTxt>
-            <PageTitle style={{ marginTop: "10vw" }}>{title}</PageTitle>
+            <PageTitle style={{ marginTop: "0vw" }}>{title}</PageTitle>
             <PageDescription
               style={{
                 maxWidth: "90%",
@@ -50,7 +40,7 @@ export default function Page9({ stickers, userStickers }) {
             </PageDescription>
           </VidTxt>
 
-          <Boxs style={{ marginTop: "10vw" }}>
+          <Boxs style={{ marginTop: "0vw" }}>
             <Sticker
               multi={true}
               title="MF 6711"

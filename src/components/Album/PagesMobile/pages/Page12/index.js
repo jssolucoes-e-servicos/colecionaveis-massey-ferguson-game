@@ -1,17 +1,10 @@
 import React from "react";
 import AssetsDataPage from "./page12.json";
-import {
-  StickerContainerP3,
-  StickerContainerP3B,
-  Boxs,
-  StickerCard,
-  StickerP3B,
-  StickerContainer,
-} from "./styles";
+import AssetsData from "@/services/data.json";
+import { Boxs, PPDescription } from "./styles";
 import {
   PageContainer,
   PageHeaderMobile,
-  PageTitle,
   PageDescription,
   PageHalf,
 } from "../styles";
@@ -29,8 +22,9 @@ export default function Page9({ stickers, userStickers }) {
 
   const title = "De olho no amanhã";
   const description =
-    "175 anos se passaram e, depois de fazer uma revolução no campo, estamos mais conectados com o futuro do que nunca. E isso o agricultor que faz com o coração sabe bem, pois pode confiar demais nas nossas máquinas.";
-
+    "175 anos se passaram e estamos mais conectados do que nunca com o produtor e com o futuro..";
+  const description2 =
+    "• Em 2020, O trator 8S veio mostrar que o futuro já começou.";
   return (
     //background={AssetsData.album.page3Bg}
     <PageContainer background={AssetsDataPage.pages.page12}>
@@ -38,13 +32,41 @@ export default function Page9({ stickers, userStickers }) {
         <PageHeaderMobile
           style={{ justifyContent: "center", alignItems: "center" }}
         >
-          <VidTxt>
+          <PageDescription style={{ maxWidth: "90%", marginTop: "4vw" }}>
+            {description.substr(0, 110)}
+          </PageDescription>
+          <VidTxt style={{ marginTop: -10 }}>
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                backgroundImage: `url("${AssetsData.album.page3}")`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "100% 100%",
+                height: "40px",
+                flexDirection: "column",
+                padding: "5px 0px 0px 1px",
+              }}
+            >
+              {/* <PageTitle>{title}</PageTitle> */}
+
+              <PPDescription
+                style={{ maxWidth: "100%", marginTop: 0, fontSize: 10 }}
+              >
+                {description2}
+              </PPDescription>
+            </div>
+          </VidTxt>
+          {/* <VidTxt>
             <PageTitle>{title}</PageTitle>
             <PageDescription style={{ maxWidth: "90%", marginTop: "1vw" }}>
               {description.substr(0, 110)}
             </PageDescription>
-          </VidTxt>
-          <Boxs style={{ marginTop: 10 }}>
+          </VidTxt> */}
+          <Boxs style={{ marginTop: 0 }}>
             <Sticker
               multi={true}
               style={{ marginTop: 0 }}
@@ -56,7 +78,7 @@ export default function Page9({ stickers, userStickers }) {
               description="Non nostrud consequat tempor amet."
             />
           </Boxs>
-          <Boxs style={{ marginTop: 5 }}>
+          <Boxs style={{ marginTop: 0 }}>
             <Sticker
               multi={true}
               style={{ marginTop: 0 }}

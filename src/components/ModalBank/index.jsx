@@ -15,7 +15,6 @@ import {
 import api from "@/services/api";
 import AssetsData from "@/services/data.json";
 import Translator from "@/components/I18n/Translator";
-import Fakepacote from "@/assets/images/icons/pacotefigurinha.png";
 
 export default function ModelBanks({
   children,
@@ -83,7 +82,7 @@ export default function ModelBanks({
               </ModalTxtB>
 
               <ModalImB>
-                <FotoFiguriPadrao src={Fakepacote} />
+                <FotoFiguriPadrao src="/storage/images/icons/pacotefigurinha.png " />
                 <FotoFiguri src={AssetsData.figures[dataView - 1].image} />
               </ModalImB>
 

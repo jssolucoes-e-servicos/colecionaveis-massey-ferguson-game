@@ -171,6 +171,8 @@
   align-items: center;
   margin-top: 15px;
   margin-bottom: 10px;
+  border-style: none;
+  border: 0;
 }
 .Result_pesquisar:hover {
   background-color: #5c5b5b;

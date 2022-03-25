@@ -23,8 +23,7 @@ export default function Page2({ stickers, userStickers }) {
   if (!stickers?.length) return null;
 
   const title = "Há 175 anos de olho no futuro";
-  const description =
-    "A Massey Ferguson celebra 175 anos no mundo em 2022. Para celebrar sua presença no Brasil, que completou 60 anos em 2021, a marca lança um álbum que conta ";
+  const description = "A Massey";
 
   return (
     <PageContainer background={AssetsData.pages.page2}>
@@ -34,13 +33,13 @@ export default function Page2({ stickers, userStickers }) {
           style={{ justifyContent: "center", alignItems: "center" }}
         >
           <VidTxt>
-            {/* <PageTitle style={{ color: "#fff" }}>{title}</PageTitle>
-            <PageDescription style={{ maxWidth: "95%", opacity: "0.5" }}>
-              {description.substr(0, 110)}
+            {/* <PageTitle style={{ color: "#fff" }}>{title}</PageTitle> */}
+            {/* <PageDescription style={{ maxWidth: "95%", opacity: "0" }}>
+              {description.substr(0, 10)}
             </PageDescription> */}
           </VidTxt>
 
-          <BoxxT style={{ marginTop: 5 }}>
+          <BoxxT style={{ marginTop: "10vw" }}>
             <Boxcards>
               <Boxborder>
                 <Sticker
@@ -48,7 +47,7 @@ export default function Page2({ stickers, userStickers }) {
                   sticker={sticker4}
                   year={1961}
                   obtained={userStickers.includes(sticker4.id)}
-                  description="1980 - Como mais uma alternativa atrativa para o agricultor ter sua máquina Massey Ferguson, nasceu o Consórcio Nacional Massey Ferguson."
+                  description="1980: Nasceu o Consórcio Nacional Massey Ferguson."
                 />
               </Boxborder>
             </Boxcards>
@@ -59,12 +58,12 @@ export default function Page2({ stickers, userStickers }) {
                   year={1961}
                   title="Plantadeiras Massey Ferguson"
                   obtained={userStickers.includes(sticker5.id)}
-                  description="1988 - Com a expansão do plantio direto, surgem as primeiras plantadeiras Massey Ferguson."
+                  description="1988: Surgem as primeiras plantadeiras Massey Ferguson."
                 />
               </Boxborder>
             </Boxcards>
           </BoxxT>
-          <BoxxT>
+          <BoxxT style={{ marginTop: "3vw" }}>
             <Boxcards>
               <Boxborder>
                 <Sticker
@@ -72,7 +71,7 @@ export default function Page2({ stickers, userStickers }) {
                   year={1961}
                   title="Agricultura de precisão"
                   obtained={userStickers.includes(sticker6.id)}
-                  description="2013 - A era da agricultura digital é oficializada com o lançamento das tecnologias de coletas de dados e monitoramento, que agora são cada vez mais inteligentes."
+                  description="2013:Lançamento das tecnologias de coletas de dados e monitoramento"
                 />
               </Boxborder>
             </Boxcards>
@@ -83,7 +82,7 @@ export default function Page2({ stickers, userStickers }) {
                   year={1961}
                   title="Massey Ferguson Premium"
                   obtained={userStickers.includes(sticker7.id)}
-                  description="2013 - A era da agricultura digital é oficializada com o lançamento das tecnologias de coletas de dados e monitoramento, que agora são cada vez mais inteligentes."
+                  description="2013:Lançamento das tecnologias de coletas de dados e monitoramento"
                 />
               </Boxborder>
             </Boxcards>

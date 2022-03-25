@@ -30,11 +30,11 @@ export default function Page6({ stickers, userStickers }) {
 
   const title = "Mais que um trator, uma família";
   const description =
-    "• O MF 275 foi lançado em 1975 e foi líder de vendas absoluto na categoria.";
+    "• Os modelos 290 e 295 possuíam a mesma tecnologia do 275.";
   const description2 =
-    "• Os modelos 290 e 295 possuíam a mesma tecnologia do trator mais amado do Brasil.";
+    "• O MF 4275 seguiu o legado de mais vendido por versatilidade";
   const description3 =
-    "• O MF 4275 continuou o legado como trator mais vendido por sua versatilidade.";
+    "• O MF 4275 seguiu o legado de mais vendido por versatilidade";
 
   return (
     <PageContainer background={AssetsDataPage.pages.pages7}>
@@ -50,27 +50,26 @@ export default function Page6({ stickers, userStickers }) {
           <VidTxt>
             <div
               style={{
+                width: "100%",
                 display: "flex",
                 justifyContent: "center",
-                textAlign: "start",
+                textAlign: "center",
                 alignItems: "start",
                 backgroundImage: `url("${AssetsData.album.page3}")`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "100% 100%",
-                height: "80px",
+                height: "25vw",
                 flexDirection: "column",
                 padding: "10px 0px 0px 22px",
               }}
             >
               {/* <PageTitle>{title}</PageTitle> */}
               <PPDescription
-                style={{ maxWidth: "90%", marginTop: 5, fontSize: 8 }}
+                style={{ maxWidth: "90%", marginTop: 5, fontSize: 7 }}
               >
                 {description}
               </PPDescription>
-              <PPDescription
-                style={{ maxWidth: "90%", marginTop: -12, fontSize: 8 }}
-              >
+              <PPDescription style={{ maxWidth: "90%", fontSize: 7 }}>
                 {description2}
               </PPDescription>
             </div>

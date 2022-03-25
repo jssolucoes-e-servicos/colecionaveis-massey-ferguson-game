@@ -157,6 +157,8 @@ export const BtnVendeBank = styled.button`
   align-items: center;
   margin-top: 1em;
   margin-bottom: 1em;
+  border-style: none;
+  border: 0;
 `;
 export const TxtBuMb = styled.text`
   color: #fff;

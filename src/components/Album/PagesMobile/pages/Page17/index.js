@@ -37,11 +37,11 @@ export default function Page16({ stickers, userStickers }) {
             </PageDescription> */}
           </VidTxt>
 
-          <BoxxT style={{ marginTop: "8vw" }}>
+          <BoxxT style={{ marginTop: "0vw" }}>
             <Boxcards>
               <Boxborder>
                 <Sticker
-                  style={{ marginLeft: 5 }}
+                  style={{ marginLeft: 0 }}
                   sticker={sticker51}
                   title="MF 9330"
                   year={1961}
@@ -50,7 +50,7 @@ export default function Page16({ stickers, userStickers }) {
                 />
               </Boxborder>
             </Boxcards>
-            <Boxcards style={{ marginLeft: 10 }}>
+            <Boxcards style={{ marginLeft: 0 }}>
               <Boxborder>
                 <Sticker
                   title="MF 9335"

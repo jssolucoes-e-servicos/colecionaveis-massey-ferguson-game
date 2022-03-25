@@ -1,20 +1,3 @@
-/* *,
-*:before,
-*:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans_serif;
-  font-weight: bold;
-}
-body {
-
-  
- 
- 
-  min-height: 100vh;
-} */
-
 .login_wrap {
   height: 100%;
   margin: 0;

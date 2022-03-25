@@ -5,10 +5,9 @@ import perfil2 from "@/assets/images/perfil2.png";
 import ModelBanks from "@/components/Influence";
 import GameContext from "@/contexts/gameContext";
 import Template from "@/layouts/GameLayout";
-import api from "@/services/api";
 import { getAPIClient } from "@/services/axios";
 import Image from "next/image";
-import Router from "next/router";
+import Link from "node_modules/next/link";
 import { parseCookies } from "nookies";
 import React, { useContext, useEffect, useState } from "react";
 
@@ -23,22 +22,10 @@ export default function Player({userData}) {
   }
   
   useEffect(() => {
-    getData();
     setLoad(false);
   }, []);
 
-  const [signed, setSigned] = useState();
-
-  async function getData() {
-    try {
-      const { data } = await api.get("players/me");
-      setSigned(data);
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
+  
   return (
     <Template userData={userData}>
       {modalinfluence === true ? (
@@ -71,13 +58,14 @@ export default function Player({userData}) {
                 <span className="player-spanP">{userData.phone}</span>
               </div>
               <div className="Player-full">
-                <button
-                  className="Btn-player"
-                  type="button"
-                  onClick={() => Router.push("/game/player/alterar")}
-                >
-                  editar perfil
-                </button>
+                <Link href={"/game/player/alterar"}>
+                  <button
+                    className="Btn-player"
+                    type="button"
+                  >
+                    editar perfil
+                    </button>
+                  </Link>
                 <button
                   style={{
                     color: "#fff",
@@ -108,8 +96,8 @@ export default function Player({userData}) {
                 <Image className="Player-img-pontos" src={perfil2} alt="Users" />
               </div>
               <div className="Pleyer-figures">
-                {signed && (
-                  <span className="Player-fig-P">{signed.premiers}</span>
+                {userData && (
+                  <span className="Player-fig-P">{userData.premiers}</span>
                 )}
                 <span className="Player-fig-F">Figurinhas abertas</span>
               </div>
@@ -119,8 +107,8 @@ export default function Player({userData}) {
                 <Image className="Player-img-pontos" src={perfil1} alt="Users" />
               </div>
               <div className="Pleyer-figures">
-                {signed && (
-                  <span className="Player-fig-P">{signed.stands}</span>
+                {userData && (
+                  <span className="Player-fig-P">{userData.stands}</span>
                 )}
                 <span className="Player-fig-F">Figurinhas trocadas</span>
               </div>
@@ -130,7 +118,7 @@ export default function Player({userData}) {
                 <Image className="Player-img-pontos" src={Mcons} alt="Users" />
               </div>
               <div className="Pleyer-figures">
-                {signed && <span className="Player-fig-P">{signed.cash}</span>}
+                {userData && <span className="Player-fig-P">{userData.cash}</span>}
                 <span className="Player-fig-F">Massey Points</span>
               </div>
             </div>
@@ -153,7 +141,6 @@ export const getServerSideProps = async (ctx) => {
   } else {
     const apiClient = getAPIClient(ctx);
     const { data } = await apiClient.get('players/me');
-    console.log(data);
     return {
       props: { userData: data },
     };

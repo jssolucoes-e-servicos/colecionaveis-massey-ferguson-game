@@ -23,7 +23,7 @@ export default function Page3({ stickers, userStickers }) {
 
   const title = "O seu amor por trator começou aqui";
   const description =
-    "Quem é que não se lembra do vermelhinho que fez seu coração pulsar mais forte? É bem provável que tenha sido um destes tratores que mudaram a história da agricultura brasileira e que até hoje é o mais querido de muitos masseyros e masseyras: a Linha X";
+    "Com os vermelhinhos que fizeram o coração de muitos pulsar mais forte: da linha X";
 
   return (
     //  background={AssetsData.album.page2}
@@ -38,11 +38,13 @@ export default function Page3({ stickers, userStickers }) {
           }}
         >
           <VidTxt>
-            <PageTitle style={{ color: "#333" }}>{title}</PageTitle>
+            <PageTitle style={{ color: "#333", marginTop: "5vw" }}>
+              {title}
+            </PageTitle>
             <PageDescription
               style={{
                 maxWidth: "90%",
-                marginTop: "1vw",
+                // marginTop: "1vw",
               }}
             >
               {description.substr(0, 110)}
@@ -53,6 +55,7 @@ export default function Page3({ stickers, userStickers }) {
             <Boxcards>
               <Boxborder>
                 <Sticker
+                  style={{ paddingBottom: 0 }}
                   title="35X"
                   sticker={sticker8}
                   year={1961}
@@ -62,7 +65,7 @@ export default function Page3({ stickers, userStickers }) {
               </Boxborder>
             </Boxcards>
           </BoxxT>
-          <Boxs>
+          <Boxs style={{ paddingBottom: 0 }}>
             <Sticker
               title="50X"
               multi={true}

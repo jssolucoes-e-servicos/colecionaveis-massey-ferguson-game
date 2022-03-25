@@ -169,24 +169,29 @@ export const ModalPremier = styled.section`
 export const ModalAnimaBooton = styled.section`
   z-index: 9999999;
   width: 100%;
-  max-width: 50%;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
+  background-color: red;
   /* margin-top: -10%; */
   position: absolute;
   bottom: 0;
+  padding: 1px;
   @media (max-width: 980px) {
     width: 100%;
-    max-width: 100%;
-    bottom: 10px;
+    max-width: 96%;
+    bottom: 70px;
+    background: red;
+    z-index: 1;
+    position: fixed;
+    padding: 1px;
   }
 `;
 
 export const ButtonAnimate = styled.button`
   position: relative;
-  width: 160px;
+  width: 100%;
   height: 50px;
   line-height: 48px;
   background: RED;

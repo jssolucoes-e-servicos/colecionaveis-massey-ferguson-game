@@ -29,7 +29,6 @@ import {
   StickerTitle,
   ObtainedStickerContainer,
   StickerImageContainer,
-  StickerId,
   StickerWrapper,
 } from "./styles";
 

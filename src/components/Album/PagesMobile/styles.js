@@ -24,7 +24,8 @@ const multiFigures = css`
     margin-left: -3px !important;
   }
   @media (max-width: 320px) {
-    margin-left: -1px !important;
+    margin-left: -15px !important;
+    /* margin-left: -1px !important; */
   }
 `;
 

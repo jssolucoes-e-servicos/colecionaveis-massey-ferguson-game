@@ -38,7 +38,8 @@ export const CardCarro = styled.button`
   margin-left: 6px;
   background: #fff;
   margin-bottom: 0;
-
+  border-style: none;
+  border: 0;
   /* :hover {
     cursor: pointer;
     border: solid 3px red;
@@ -166,6 +167,8 @@ export const DCbtnsB = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-style: none;
+  border: 0;
   @media (max-width: 900px) {
     width: 30px;
     /* margin-left: 15px; */
@@ -200,23 +203,24 @@ export const Spantick = styled.button`
   justify-content: center;
   align-items: center;
   padding: 5px 5px 5px;
+  border-style: none;
+  border: 0;
 `;
 export const SpanfULL = styled.button`
-  /* width: 100px;
-  max-width: 150px; */
   margin-left: 1%;
   height: 40;
   display: none;
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
-  margin-bottom: 70px;
-
+  margin-bottom: 80px;
   font-size: 0.6em;
   border-radius: 10px;
   transition: all ease-in-out 0.9s;
   justify-content: center;
   align-items: center;
   padding: 5px 5px 5px;
+  border-style: none;
+  border: 0;
 `;
 export const DCbtnsBb = styled.button`
   background-color: #810101;
@@ -260,15 +264,15 @@ export const Spanf = styled.span`
 `;
 export const BtnBimage = styled.img`
   width: 100%;
-  max-width: 50%;
+  max-width: 65%;
   height: 50%;
-  background: #3c3c3c;
+  background: transparent;
   background-repeat: no-repeat;
   background-size: contain;
   @media (max-width: 900px) {
     width: 100%;
-    max-width: 40%;
-    height: 40%;
+    max-width: 90%;
+    height: 60%;
   }
 `;
 

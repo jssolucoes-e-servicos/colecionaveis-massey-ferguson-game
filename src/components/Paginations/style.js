@@ -124,6 +124,13 @@ export const ListPagination = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-style: none;
+  border: 0;
+  button {
+    border-style: none;
+    border: 0;
+    border-radius: 50%;
+  }
 `;
 export const PaginationBox = styled.div`
   width: 100%;

@@ -6,13 +6,14 @@ export const StickerContainer = styled.div`
 `;
 
 export const StickerDescription = styled.p`
-  margin: 0;
+  margin-top: 2px;
+  /* margin: 0; */
   font-size: 6px;
   line-height: 8px;
-  margin-top: 0px;
+  /* margin-top: 0px; */
   font-weight: inherit;
   opacity: 0.7;
-  max-width: 80px;
+  max-width: 84px;
   height: auto;
 
   > b {
@@ -35,6 +36,7 @@ export const Capas = styled.div`
   background-image: url("https://www.colecionaveismassey.com.br/assets/images/bgs/Capa.png");
   background-size: 100% 100%;
   @media (max-width: 900px) {
+    height: 250px;
     width: 80%;
     max-height: 220px;
   }

@@ -38,7 +38,7 @@ export default function Template({ children, userData }) {
       //Verify watch status of play audio
       (localStorage.getItem("cmg-ap") === "true") ? setPlayAudio(true) : setPlayAudio(false);
       //Verify and active in EventListnner a monitor of sizing window
-      setLoad(true);
+      setLoad(false);
       var windowWidth = window.innerWidth;
       if (windowWidth <= 1200) {
         sessionStorage.setItem("isMobile", "true");
@@ -69,7 +69,7 @@ export default function Template({ children, userData }) {
 
   //OK
   const handleAcceptRule = async () => {
-    const accept = await api.get("players/rules");
+    const accept = await API.get("players/rules");
     if (accept) {
       localStorage.setItem("cmf-ar", "true");
       setAcceptedRule("true");
@@ -169,7 +169,7 @@ export default function Template({ children, userData }) {
             <div className="Imgempresa" style={{ marginBottom: 5 }}>
               <img src="/storage/images/brand/MF_LogoWhite.png" alt="logo" />
             </div>
-            <Link href="/game/como-jogar">
+            <Link href="/game/como-jogar" onClick={()=>{setLoad(true)}}>
               <button className="btnMute">
                 <div className="btnf">
                   <div className="TxtLef">
@@ -184,7 +184,7 @@ export default function Template({ children, userData }) {
               </button>
             </Link>
 
-            <Link href="/game/player">  
+            <Link href="/game/player" onClick={()=>{setLoad(true)}}>  
               <button className="btnMute">
                 <div className="btnf">
                   <div className="TxtLef">
@@ -196,7 +196,7 @@ export default function Template({ children, userData }) {
                 </div>
               </button>
             </Link>
-            <Link href="/game">
+            <Link href="/game"  onClick={()=>{setLoad(true)}}>
               <button className="btnMute">
                 <div className="btnf">
                   <div className="TxtLef">
@@ -208,7 +208,7 @@ export default function Template({ children, userData }) {
                 </div>
               </button>
             </Link>
-            <Link href="/game/banca" >
+            <Link href="/game/banca" onClick={()=>{setLoad(true)}}>
               <button
                 className="btnMute">
                 <div className="btnf">
@@ -223,7 +223,7 @@ export default function Template({ children, userData }) {
                 </div>
               </button>
             </Link>
-            <Link href="/game/ranking">
+            <Link href="/game/ranking" onClick={()=>{setLoad(true)}}>
               <button className="btnMute">
                 <div className="btnf">
                   <div className="TxtLef">
@@ -235,7 +235,7 @@ export default function Template({ children, userData }) {
                 </div>
               </button>
             </Link>
-            <Link href="/game">  
+            <Link href="/game/historico" onClick={()=>{setLoad(true)}}>  
               <button className="btnMute">
                 <div className="btnf">
                   <div className="TxtLef">

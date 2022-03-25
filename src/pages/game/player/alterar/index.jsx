@@ -1,4 +1,4 @@
-import Logoempresa from "@/assets/images/MF_LogoWhite.png";
+import LayoutCSS from "@/assets/css/login.module.css";
 import GameContext from "@/contexts/gameContext";
 import Template from "@/layouts/GameLayout";
 import api from "@/services/api";
@@ -9,7 +9,6 @@ import { parseCookies } from "nookies";
 import React, { useContext, useEffect, useState } from "react";
 import InputMask from "react-input-mask";
 import { toast } from "react-toastify";
-
 export default function PlayerEdit({userData}) {
 
   const { setLoad } = useContext(GameContext);
@@ -17,12 +16,20 @@ export default function PlayerEdit({userData}) {
 
   useEffect(() => {
     async function adjustData() {
-      setFields((values) => ({
-        ...fields,
-        birth: moment(userData.birth).format("DD/MM/yyyy"),
-      }));
+      setFields({
+        name: userData.name,
+        email: userData.email,
+        phone: userData.phone,
+        birth: userData.birth,
+        country: userData.country,
+        provincy: userData.provincy,
+        city: userData.city,
+        address: userData.address,
+      });
+      setLoad(false);
     }
     adjustData();
+    console.log(fields);
   }, []);
 
   function handleChange(e) {
@@ -39,18 +46,19 @@ export default function PlayerEdit({userData}) {
       try {
         setLoad(true);
         const { data } = await api.post("players/update", {
-          name: fields.name,
-          phone: fields.phone,
+          name: fields?.name.length > 0 ? fields.name : "",
+          phone: fields?.phone.length > 0 ? fields.phone : "",
           birth: moment(fields.birth).format("yyyy/MM/DD"),
-          country: fields.country,
-          provincy: fields.provincy,
-          city: fields.city,
-          address: fields.address,
+          country: fields.country?.length > 0 ? fields.country : "",
+          provincy: fields.provincy?.length > 0 ? fields.provincy : "",
+          city: fields.city?.length > 0 ? fields.city : "",
+          address: fields.address?.length > 0 ? fields.address : "",
           language: localStorage.getItem("i18nextLng"),
         });
+        Router.push("/game/player");
         setLoad(false);
         toast.success(data.message);
-        Router.push("/game/player");
+        
       } catch (error) {
         console.log(error);
         toast.error("Falha ao cadastrar!");
@@ -62,12 +70,12 @@ export default function PlayerEdit({userData}) {
 
   const validate = () => {
     if (
-      fields.name.length > 0 &&
-      fields.phone.length > 0 &&
-      fields.country.length > 0 &&
-      fields.provincy.length > 0 &&
-      fields.city.length > 0 &&
-      fields.address.length > 0
+      fields.name?.length > 0 &&
+      fields.phone?.length > 0 &&
+      fields.country?.length > 0 &&
+      fields.provincy?.length > 0 &&
+      fields.city?.length > 0 &&
+      fields.address?.length > 0
     ) {
       return true;
     } else {
@@ -83,7 +91,7 @@ export default function PlayerEdit({userData}) {
             <div className="Player-jog">
               <div className="Player-full">
                 <div className="LogoPlayer">
-                  <img className="Player-user" src={Logoempresa} alt="Users" />
+                  <img className="Player-user" src={"/storage/images/brand/MF_LogoWhite.png"} alt="Users" />
                 </div>
                 <div className="formUser" id="formcadsUser">
                   <div
@@ -91,9 +99,9 @@ export default function PlayerEdit({userData}) {
                     id="CadsEdit-User "
                     style={{ maxWidth: "600px" }}
                   >
-                    <label className="login_label">
+                    <label className={LayoutCSS.login_label}>
                       <span
-                        className="login_span"
+                        className={LayoutCSS.login_span}
                         style={{
                           display: "flex",
                           justifyContent: "flex-end",
@@ -119,7 +127,7 @@ export default function PlayerEdit({userData}) {
                         </a>
                       </span>
                     </label>
-                    <label className="login_label">
+                    <label className={LayoutCSS.login_label}>
                       <span
                         style={{
                           fontSize: "1.5em",
@@ -129,97 +137,83 @@ export default function PlayerEdit({userData}) {
                         Editar Dados
                       </span>
                     </label>
-                    <label className="login_label">
-                      {/* <span className="login_span">Seu nome</span> */}
+                    <label className={LayoutCSS.login_label}>
                       <input
                         type="text"
                         name="name"
                         placeholder="nome completo"
-                        className="login_input"
+                        className={LayoutCSS.login_input}
                         onChange={handleChange}
                         value={fields.name}
                       />
                     </label>
-                    <label className="login_label">
-                      {/* <span className="login_span">Telefone</span> */}
+                    <label className={LayoutCSS.login_label}>
                       <InputMask
                         mask="(99)99999-9999"
                         placeholder="celular"
                         type="tel"
                         name="phone"
-                        className="login_input"
+                        className={LayoutCSS.login_input}
                         onChange={handleChange}
                         value={fields.phone}
                       />
                     </label>
 
-                    <label className="login_label">
-                      {/* <span className="login_span">Data de Nascimento</span> */}
+                    <label className={LayoutCSS.login_label}>
                       <input
                         placeholder="endereço"
                         type="text"
                         name="address"
-                        className="login_input"
+                        className={LayoutCSS.login_input}
                         onChange={handleChange}
                         value={fields.address}
                       />
                     </label>
 
-                    <div className="login_separation_cad">
+                    <div className={LayoutCSS.login_separation_cad}>
                       <div className="projects">
-                        <label className="login_duple">
-                          {/* <span className="login_span">Estado</span> */}
+                        <label className={LayoutCSS.login_duple}>
                           <input
                             placeholder="cidade"
                             type="text"
                             name="city"
-                            className="login_input"
+                            className={LayoutCSS.login_input}
                             onChange={handleChange}
                             value={fields.city}
                           />
                         </label>
                       </div>
                       <div className="projects">
-                        <label className="login_duple">
-                          {/* <span className="login_span">Pais</span> */}
+                        <label className={LayoutCSS.login_duple}>
                           <input
                             placeholder="estado"
                             type="text"
                             name="provincy"
-                            className="login_input"
+                            className={LayoutCSS.login_input}
                             onChange={handleChange}
                             value={fields.provincy}
                           />
                         </label>
                       </div>
                     </div>
-                    <div className="login_separation_cad">
+                    <div className={LayoutCSS.login_separation_cad}>
                       <div className="projects">
-                        <label className="login_duple">
-                          {/* <span className="login_span">Pais</span> */}
+                        <label className={LayoutCSS.login_duple}>
                           <input
                             placeholder="pais"
                             type="text"
                             name="country"
-                            className="login_input"
+                            className={LayoutCSS.login_input}
                             onChange={handleChange}
                             value={fields.country}
                           />
                         </label>
                       </div>
                       <div className="projects">
-                        <label className="login_duple">
-                          {/* <DatePicker
-                            name="birth"
-                            className="login_input"
-                            selected={Date(
-                              moment(UserData.birth).format("DD/MM/yyyy")
-                            )}
-                            onChange={handleChange}
-                          /> */}
+                        <label className={LayoutCSS.login_duple}>
                           <InputMask
                             name="birth"
-                            className="login_input"
+                            className={LayoutCSS.login_input}
                             type="date"
                             placeholder="data nascimento"
                             onChange={handleChange}
@@ -228,24 +222,24 @@ export default function PlayerEdit({userData}) {
                         </label>
                       </div>
                     </div>
-                    <label className="login_label">
+                    <label className={LayoutCSS.login_label}>
                       <input
                         type="email"
                         name="email"
-                        className="login_input"
+                        className={LayoutCSS.login_input}
                         readOnly="true"
                         value={fields.email}
                       />
                     </label>
                     <div
-                      className="login_separation_cad"
+                      className={LayoutCSS.login_separation_cad}
                       style={{ marginBottom: "50px" }}
                     >
                       <button
                         style={{ marginBottom: 10, marginTop: 20 }}
                         type="button"
                         onClick={handleSave}
-                        className="submit effectClick login_button"
+                        className={["submit", "effectClick", LayoutCSS.login_button]}
                         id="btnsubcad"
                       >
                         Salvar
@@ -274,7 +268,6 @@ export const getServerSideProps = async (ctx) => {
   } else {
     const apiClient = getAPIClient(ctx);
     const { data } = await apiClient.get('players/me');
-    console.log(data);
     return {
       props: { userData: data },
     };

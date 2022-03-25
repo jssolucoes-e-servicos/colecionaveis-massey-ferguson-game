@@ -1,10 +1,10 @@
-import IconBank from "@/assets/images/icons/banca.png";
-import IconColar from "@/assets/images/icons/iconeC.png";
-import Fakecarousel from "@/assets/images/icons/ImageBg.png";
 import CarouselF from "@/components/CarouselFiguri";
 import {
-  BtnBimage, DCbtns,
-  DCbtnsB, Dge, FigureTT,
+  BtnBimage,
+  DCbtns,
+  DCbtnsB,
+  Dge,
+  FigureTT,
   Imagett,
   TxtCarCards,
   TxtTT
@@ -22,7 +22,7 @@ import { parseCookies } from "nookies";
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-export default function Historic({userData}) {
+export default function Historic({ userData }) {
   const { setLoad } = useContext(GameContext);
   const [listCommon, setListCommon] = useState(null);
   const [listMedium, setListMedium] = useState(null);
@@ -43,14 +43,12 @@ export default function Historic({userData}) {
     setLoad(false);
   }, []);
 
-
   async function getData() {
     try {
       setLoad(true);
       const {
         data: { albums },
       } = await api.get(`/albums/historic`);
-
 
       if (albums) {
         let dataFilterType1 = albums.filter(function (el) {
@@ -155,13 +153,13 @@ export default function Historic({userData}) {
           }}
         >
           <FigureTT>
-            <Imagett src={Fakecarousel} />
+            <Imagett src="/storage/images/icons/ImageBg.png" />
           </FigureTT>
           <FigureTT>
-            <Imagett src={Fakecarousel} />
+            <Imagett src="/storage/images/icons/ImageBg.png" />
           </FigureTT>
           <FigureTT>
-            <Imagett src={Fakecarousel} />
+            <Imagett src="/storage/images/icons/ImageBg.png" />
           </FigureTT>
         </div>
       </React.Fragment>
@@ -263,7 +261,10 @@ export default function Historic({userData}) {
                                 <DCbtns>
                                   {item.repeted === false && (
                                     <DCbtnsB id={item.id} onClick={handlePaste}>
-                                      <BtnBimage id={item.id} src={IconColar} />
+                                      <BtnBimage
+                                        id={item.id}
+                                        src="/storage/images/icons/iconeC.png"
+                                      />
                                     </DCbtnsB>
                                   )}
 
@@ -272,7 +273,8 @@ export default function Historic({userData}) {
                                     onClick={handSelectedBuy}
                                   >
                                     <BtnBimage
-                                      src={IconBank}
+                                      src="/storage/images/icons/mcons.png"
+                                      // src={IconBank}
                                       id={item.id}
                                       onClick={handSelectedBuy}
                                     />
@@ -345,7 +347,10 @@ export default function Historic({userData}) {
                                 <DCbtns>
                                   {item.repeted === false && (
                                     <DCbtnsB id={item.id} onClick={handlePaste}>
-                                      <BtnBimage id={item.id} src={IconColar} />
+                                      <BtnBimage
+                                        id={item.id}
+                                        src="/storage/images/icons/iconeC.png"
+                                      />
                                     </DCbtnsB>
                                   )}
                                   <DCbtnsB
@@ -353,7 +358,7 @@ export default function Historic({userData}) {
                                     onClick={handSelectedBuy}
                                   >
                                     <BtnBimage
-                                      src={IconBank}
+                                      src="/storage/images/icons/mcons.png"
                                       id={item.id}
                                       onClick={handSelectedBuy}
                                     />
@@ -422,7 +427,10 @@ export default function Historic({userData}) {
                                 <DCbtns>
                                   {item.repeted === false && (
                                     <DCbtnsB id={item.id} onClick={handlePaste}>
-                                      <BtnBimage id={item.id} src={IconColar} />
+                                      <BtnBimage
+                                        id={item.id}
+                                        src="/storage/images/icons/iconeC.png"
+                                      />
                                     </DCbtnsB>
                                   )}
                                   <DCbtnsB
@@ -430,7 +438,7 @@ export default function Historic({userData}) {
                                     onClick={handSelectedBuy}
                                   >
                                     <BtnBimage
-                                      src={IconBank}
+                                      src="/storage/images/icons/mcons.png"
                                       id={item.id}
                                       onClick={handSelectedBuy}
                                     />
@@ -510,7 +518,10 @@ export default function Historic({userData}) {
                                 <DCbtns>
                                   {item.repeted === false && (
                                     <DCbtnsB id={item.id} onClick={handlePaste}>
-                                      <BtnBimage id={item.id} src={IconColar} />
+                                      <BtnBimage
+                                        id={item.id}
+                                        src="/storage/images/icons/iconeC.png"
+                                      />
                                     </DCbtnsB>
                                   )}
                                   <DCbtnsB
@@ -518,7 +529,7 @@ export default function Historic({userData}) {
                                     onClick={handSelectedBuy}
                                   >
                                     <BtnBimage
-                                      src={IconBank}
+                                      src="/storage/images/icons/mcons.png"
                                       id={item.id}
                                       onClick={handSelectedBuy}
                                     />
@@ -561,7 +572,7 @@ export const getServerSideProps = async (ctx) => {
     };
   } else {
     const apiClient = getAPIClient(ctx);
-    const { data } = await apiClient.get('players/me');
+    const { data } = await apiClient.get("players/me");
     return {
       props: { userData: data },
     };

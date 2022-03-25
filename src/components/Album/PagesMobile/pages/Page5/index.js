@@ -1,11 +1,10 @@
 import React from "react";
 import AssetsData from "@/services/data.json";
 
-import { StickerContainerP3, BoxxT, Boxcards, Boxborder, Boxs } from "./styles";
+import { BoxxT, Boxcards, Boxborder, Boxs } from "./styles";
 import {
   PageContainer,
   PageHeaderMobile,
-  PageTitle,
   PageDescription,
   PageHalf,
 } from "../styles";
@@ -21,10 +20,6 @@ export default function Page4({ stickers, userStickers }) {
   const sticker14 = getSticker(14, stickers);
 
   if (!stickers?.length) return null;
-
-  const title = "O seu amor por trator começou aqui";
-  const description =
-    "Quem é que não se lembra do vermelhinho que fez seu coração pulsar mais forte? É bem provável que tenha sido um destes tratores que mudaram a história da agricultura brasileira e que até hoje é o mais querido de muitos masseyros e masseyras: a Linha X";
 
   return (
     <PageContainer background={AssetsData.album.page2}>
@@ -46,7 +41,7 @@ export default function Page4({ stickers, userStickers }) {
             </PageDescription>
           </VidTxt>
 
-          <BoxxT>
+          <BoxxT style={{ marginTop: "10vw" }}>
             <Boxcards>
               <Boxborder>
                 <Sticker

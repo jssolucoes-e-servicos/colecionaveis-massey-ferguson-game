@@ -150,6 +150,8 @@ export const BtnVendeBank = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-style: none;
+  border: 0;
 `;
 export const TxtBuMb = styled.text`
   color: #fff;

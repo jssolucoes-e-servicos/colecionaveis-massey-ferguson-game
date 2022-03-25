@@ -42,7 +42,6 @@ export default function Ranking({userData}) {
     try {
       setLoad(true);
       const { data } = await API.get(`rank?page=${nextPage}`);
-      console.log(data);
       setPlayers(data.rank.players);
       setTops(data.top);
       setInfo({
@@ -53,7 +52,6 @@ export default function Ranking({userData}) {
       setLoad(false);
     } catch (error) {
       setLoad(false);
-      //console.log("error");
     }
     }
 
@@ -181,7 +179,6 @@ export const getServerSideProps = async (ctx) => {
   } else {
     const apiClient = getAPIClient(ctx);
     const { data } = await apiClient.get('players/me');
-    console.log(data);
     return {
       props: { userData: data },
     };

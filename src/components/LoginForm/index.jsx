@@ -19,20 +19,20 @@ export default function LoginForm({ functions }) {
     if (data.email.length > 0 && data.password.length > 0) {
       setLoad(true);
       try {
-        const {data: response} = await API.post("auth/player", {
+        const { data: response } = await API.post("auth/player", {
           email: data.email,
           password: data.password,
         });
         localStorage.setItem("init", "true");
-        API.defaults.headers['Authorization'] = `Bearer ${response.token}`;
+        API.defaults.headers["Authorization"] = `Bearer ${response.token}`;
         await functions.verifyPremier();
-        setCookie(null, 'cmf-00', JSON.stringify(response.player), {
+        setCookie(null, "cmf-00", JSON.stringify(response.player), {
           maxAge: 30 * 24 * 60 * 60,
-          path: '/',
-        }); 
-        setCookie(null, 'cmf-01', response.token, {
+          path: "/",
+        });
+        setCookie(null, "cmf-01", response.token, {
           maxAge: 30 * 24 * 60 * 60,
-          path: '/',
+          path: "/",
         });
         Router.replace("/game");
       } catch (error) {
@@ -48,14 +48,19 @@ export default function LoginForm({ functions }) {
     <div className={[loginCSS.form, loginCSS.sign_in]} id="Logomobo">
       <div className={loginCSS.sign_G}>
         <div className={loginCSS.login_h2}>
-          <Image className={loginCSS.iconicos} src={IconicosImg} alt="logo" style={{width:50}}/>
+          <Image
+            className={loginCSS.iconicos}
+            src={IconicosImg}
+            alt="logo"
+            style={{ width: 50 }}
+          />
         </div>
         <form onSubmit={handleSubmit(handleLogin)}>
           <label className={loginCSS.login_label}>
             <div className={loginCSS.login_separation}>
               <input
                 type="email"
-               defaultValue="jackson144@gmail.com"
+                defaultValue="sorrentino@sorrentino.com"
                 autoComplete="off"
                 {...register("email", { required: true })}
                 className={loginCSS.login_input}
@@ -64,20 +69,17 @@ export default function LoginForm({ functions }) {
             </div>
           </label>
           <label className={loginCSS.login_label}>
-          <div className={loginCSS.login_separation}>
+            <div className={loginCSS.login_separation}>
               <input
                 type="password"
-                defaultValue="522576"
+                defaultValue="123"
                 placeholder="senha"
                 className={loginCSS.login_input}
                 {...register("password", { required: true })}
               />
             </div>
           </label>
-          <button
-            className={[loginCSS.login_button]}
-            type="submit"
-          >
+          <button className={[loginCSS.login_button]} type="submit">
             <Translator path="login.button" />
           </button>
         </form>
@@ -98,7 +100,7 @@ export default function LoginForm({ functions }) {
           </div>
           <div className={loginCSS.Cadt2}>
             <button
-                 className = { loginCSS.BtL }
+              className={loginCSS.BtL}
               onClick={() => {
                 functions.setModalRecovery(true);
               }}

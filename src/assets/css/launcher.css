@@ -916,9 +916,11 @@ animation-delay: 0.75s;*/
   font-size: 2em;
   font-weight: 900;
   color: #696969;
+  width: 60px;
 }
 .TbdH img {
   display: none;
+  width: 20px;
 }
 .Terms-Img {
   width: 100%;
@@ -1353,7 +1355,7 @@ animation-delay: 0.75s;*/
     min-height: 100%; */
   }
   .Banks {
-    max-width: 80%;
+    max-width: 98%;
   }
   .cards {
     width: 100%;

@@ -39,3 +39,13 @@ export const Boxs = styled.div`
   /* background-color: rosybrown; */
   /* width: 100%; */
 `;
+export const PPDescription = styled.p`
+  font-size: 1vw;
+  opacity: 0.8;
+  font-weight: lighter;
+  @media (max-width: 900px) {
+    font-size: 7px;
+    width: 90%;
+    padding: 0px 0px 0px 9px;
+  }
+`;

@@ -24,5 +24,7 @@ export const Capas = styled.div`
   background-size: 100% 100%;
   @media (max-width: 900px) {
     width: 95%;
+    height: auto;
+    min-height: 350px;
   }
 `;

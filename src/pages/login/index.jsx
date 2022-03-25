@@ -5,13 +5,19 @@ import Recovery from "@/components/Recovery";
 import RegisterForm from "@/components/RegisterForm";
 import GameContext from "@/contexts/gameContext";
 import API from '@/services/api';
-import { parseCookies } from "nookies";
-import React, { useContext, useState } from "react";
+import { destroyCookie } from 'nookies';
+import React, { useContext, useEffect, useState } from "react";
 
 export default function Login({userData}) {
   const [modalRecovery, setModalRecovery] = useState(false); //modal recovery
   const [isRegister, setIsRegister] = useState(false);
   const { load } = useContext(GameContext);
+
+  useEffect(() => {
+    if (userData === null) { sessionStorage.clear(); localStorage.clear() }
+  }, []);
+  
+
 
   function handleAudioEffectError() {
     let effectError = document.querySelector("#effectError");
@@ -70,17 +76,10 @@ export default function Login({userData}) {
   );
 }
 
-export const getServerSideProps = async (ctx) => {
-  const { "cmf-00": profile } = parseCookies(ctx);
-  if (profile) {
-    return {
-      redirect: {
-        destination: "/game",
-        permanet: false,
-      },
-    };
-  }
 
+export const getServerSideProps = async (ctx) => {
+  destroyCookie(ctx, 'cmf-00');
+  destroyCookie(ctx, 'cmf-01')
   return {
     props: { userData : null },
   };

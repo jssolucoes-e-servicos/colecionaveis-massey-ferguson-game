@@ -23,7 +23,7 @@ export default function Page5({ stickers, userStickers }) {
 
   const title = "Mais que um trator, uma família";
   const description =
-    "Foi na década de 1980 que o icônico trator MF 275 conquistou o posto de mais vendido do Brasil, ou melhor dizendo, o coração dos produtores brasileiros. De lá para cá esse parceiro de todas as horas mudou, se reinventou e continua sendo o preferido de muito produtor. E é por isso que permanece fazendo parte da família brasileira.";
+    "Na década de 80, o MF 275 conquistou o posto de preferido do produtor brasileiro, o mais vendido.";
 
   return (
     //background={AssetsData.album.page3Bg}
@@ -33,7 +33,7 @@ export default function Page5({ stickers, userStickers }) {
           style={{ justifyContent: "center", alignItems: "center" }}
         >
           <VidTxt>
-            <PageTitle>{title}</PageTitle>
+            <PageTitle style={{ marginTop: "4vw" }}>{title}</PageTitle>
             <PageDescription style={{ maxWidth: "90%", marginTop: "1vw" }}>
               {description.substr(0, 110)}
             </PageDescription>

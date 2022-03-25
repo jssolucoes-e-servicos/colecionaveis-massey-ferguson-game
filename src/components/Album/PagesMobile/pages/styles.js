@@ -21,12 +21,12 @@ export const PageHeaderMobile = styled.div`
   /* div central Album */
   /* background-color: #e91e63; */
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  height: 100%;
+  /* background-color: #000; */
 `;
 export const PageTitle = styled.p`
   font-family: "Roboto", sans-serif;
@@ -37,8 +37,12 @@ export const PageTitle = styled.p`
   color: #fff;
   margin-top: 1em;
   @media (max-width: 900px) {
-    font-size: 2.5vw;
+    font-size: 3vw;
     font-weight: bold;
+  }
+  @media (max-width: 450px) {
+    margin-top: 7vw;
+    font-size: 2vw;
   }
 `;
 
@@ -70,5 +74,7 @@ export const PageHalf = styled.div`
     flex: 1;
     align-items: center;
     padding-bottom: 5vw;
+    height: 100%;
+    /* background-color: blue; */
   }
 `;

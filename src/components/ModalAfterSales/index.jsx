@@ -1,8 +1,13 @@
 import Translator from "@/components/I18n/Translator";
 import React, { useEffect } from "react";
 import {
-  ModalSale, ModalSalesG, ModalSalesImage, ModelSaleF, Saleschid, SalesTxtPA,
-  SalesTxts
+  ModalSale,
+  ModalSalesG,
+  ModalSalesImage,
+  ModelSaleF,
+  Saleschid,
+  SalesTxtPA,
+  SalesTxts,
 } from "./styles";
 
 const Datatemplate = {
@@ -65,7 +70,7 @@ const ModelAfterSales = ({
       "rgba(244,67,54,",
       "rgba(170,46,37,)",
       "rgba(178,66,58,)",
-      "rgba(145,22,13,)"
+      "rgba(145,22,13,)",
     ];
     var streamingConfetti = false;
     var animationTimer = null;
@@ -286,7 +291,7 @@ const ModelAfterSales = ({
       <ModelSaleF>
         <ModalSalesG>
           <React.Fragment>
-            <ModalSalesImage src="storage/images/brand/MF_Logo_Red_Grey.png" />
+            <ModalSalesImage src="/storage/images/brand/MF_Logo_Red_Grey.png" />
             <SalesTxtPA>
               <Translator path="components.congratulations" />
             </SalesTxtPA>
