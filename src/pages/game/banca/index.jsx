@@ -1,8 +1,8 @@
 import CarouselPlayer from "@/components/CarouselFiguri";
 import {
-    BtnBimage, CardCarro, DCbtns,
-    DCbtnsB, DobtnFull, ImgCaf, SpanfULL, Spantick, TxtCarCards,
-    TxtTT
+  BtnBimage, CardCarro, DCbtns,
+  DCbtnsB, DobtnFull, ImgCaf, SpanfULL, Spantick, TxtCarCards,
+  TxtTT
 } from "@/components/CarouselFiguri/carouselslider";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import Translator from "@/components/I18n/Translator";
@@ -11,7 +11,7 @@ import { Saleschid } from "@/components/ModalAfterSales/styles";
 import ModelBanks from "@/components/ModalBank";
 import { BtnVendeBank, TxtBuMb } from "@/components/ModalBank/modbank";
 import {
-    ListPagination, Pagination, PaginationBox
+  ListPagination, Pagination, PaginationBox
 } from "@/components/Paginations/style";
 import GameContext from "@/contexts/gameContext";
 import Template from "@/layouts/GameLayout";
@@ -21,9 +21,9 @@ import AssetsData from "@/services/data.json";
 import { parseCookies } from "nookies";
 import React, { useContext, useEffect, useState } from "react";
 import {
-    BsCheckAll, BsChevronLeft,
-    BsChevronRight,
-    BsStarFill
+  BsCheckAll, BsChevronLeft,
+  BsChevronRight,
+  BsStarFill
 } from "react-icons/bs";
 import { toast } from "react-toastify";
 import ReactTooltip from "react-tooltip";
@@ -537,10 +537,20 @@ export const getServerSideProps = async (ctx) => {
       },
     };
   } else {
-    const apiClient = getAPIClient(ctx);
-    const { data } = await apiClient.get('players/me');
-    return {
-      props: { userData: data },
-    };
+    try {
+      const apiClient = getAPIClient(ctx);
+      const { data } = await apiClient.get('players/me');
+      return {
+        props: { userData: data },
+      };
+    } catch (error) {
+      return {
+        redirect: {
+          destination: "/login",
+          permanet: false,
+        },
+      }
+      
+    }
   }
 };

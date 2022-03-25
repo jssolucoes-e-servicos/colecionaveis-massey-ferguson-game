@@ -266,10 +266,20 @@ export const getServerSideProps = async (ctx) => {
       },
     };
   } else {
-    const apiClient = getAPIClient(ctx);
-    const { data } = await apiClient.get('players/me');
-    return {
-      props: { userData: data },
-    };
+   try {
+      const apiClient = getAPIClient(ctx);
+      const { data } = await apiClient.get('players/me');
+      return {
+        props: { userData: data },
+      };
+    } catch (error) {
+      return {
+        redirect: {
+          destination: "/login",
+          permanet: false,
+        },
+      }
+      
+    }
   }
 };

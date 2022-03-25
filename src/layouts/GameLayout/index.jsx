@@ -30,9 +30,10 @@ export default function Template({ children, userData }) {
     async function setConfigs() {
       //verifield is the Rules Play is accepted
       if (localStorage.getItem("init") === "true") {
-        (userData.rules_accept === "true") ? setAcceptedRule("true") : setAcceptedRule("false");
+        (userData.rules_accept === 1) ? (setAcceptedRule("true")) : setAcceptedRule("false");
+        (userData.rules_accept === 1) ? localStorage.setItem("cmf-ar", "true") : localStorage.setItem("cmf-ar", "false");
       } else {
-        const acepted = localStorage.getItem("cmf-ar")
+        const acepted = localStorage.getItem("cmf-ar");
         setAcceptedRule(acepted);
       }
       //Verify watch status of play audio
