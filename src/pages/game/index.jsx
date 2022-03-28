@@ -47,7 +47,7 @@ const responsive = {
   },
 };
 
-export default function Home({userData}) {
+export default function Home({ userData }) {
 
   const { setLoad, isMobile, setIsMobile } = useContext(GameContext);
   const [album, setAlbum] = useState(null); //Figurinhas do album (coladas)
@@ -127,7 +127,7 @@ export default function Home({userData}) {
     if (
       carouselRef.state.currentSlide + slide < 0 ||
       carouselRef.state.currentSlide + slide >
-        carouselRef.state.totalItems - carouselRef.state.slidesToShow
+      carouselRef.state.totalItems - carouselRef.state.slidesToShow
     ) {
       return;
     }
@@ -137,7 +137,7 @@ export default function Home({userData}) {
 
   return (
     <DndProvider
-    backend={isMobile === true ? (TouchBackend) : (HTML5Backend)}
+      backend={isMobile === true ? (TouchBackend) : (HTML5Backend)}
 
     >
       <Template userData={userData}>
@@ -253,7 +253,7 @@ export const getServerSideProps = async (ctx) => {
           permanet: false,
         },
       }
-      
+
     }
   }
 };

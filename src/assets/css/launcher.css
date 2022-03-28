@@ -1022,6 +1022,15 @@ animation-delay: 0.75s;*/
   justify-content: center;
   align-items: center;
 }
+.Player_full_edit_player {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+}
 .LogoPlayer {
   display: flex;
   justify-content: center;

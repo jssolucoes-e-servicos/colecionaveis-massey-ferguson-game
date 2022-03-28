@@ -9,7 +9,7 @@ import { parseCookies } from "nookies";
 import React, { useContext, useEffect, useState } from "react";
 import InputMask from "react-input-mask";
 import { toast } from "react-toastify";
-export default function PlayerEdit({userData}) {
+export default function PlayerEdit({ userData }) {
 
   const { setLoad } = useContext(GameContext);
   const [fields, setFields] = useState(userData);
@@ -58,7 +58,7 @@ export default function PlayerEdit({userData}) {
         Router.push("/game/player");
         setLoad(false);
         toast.success(data.message);
-        
+
       } catch (error) {
         console.log(error);
         toast.error("Falha ao cadastrar!");
@@ -236,10 +236,18 @@ export default function PlayerEdit({userData}) {
                       style={{ marginBottom: "50px" }}
                     >
                       <button
-                        style={{ marginBottom: 10, marginTop: 20 }}
+                        style={{
+                          width: "260px",
+                          maxWidth: "260px",
+                          marginBottom: 10,
+                          color: "#fff",
+                          marginTop: 20,
+                          background: "#000",
+                          borderStyle: "none",
+                        }}
                         type="button"
                         onClick={handleSave}
-                        className={["submit", "effectClick", LayoutCSS.login_button]}
+                        className={"effectClick"}
                         id="btnsubcad"
                       >
                         Salvar
@@ -266,7 +274,7 @@ export const getServerSideProps = async (ctx) => {
       },
     };
   } else {
-   try {
+    try {
       const apiClient = getAPIClient(ctx);
       const { data } = await apiClient.get('players/me');
       return {
@@ -279,7 +287,7 @@ export const getServerSideProps = async (ctx) => {
           permanet: false,
         },
       }
-      
+
     }
   }
 };

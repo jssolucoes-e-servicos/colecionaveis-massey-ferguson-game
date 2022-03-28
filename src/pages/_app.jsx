@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../I18n";
 function MyApp({ Component, pageProps }) {
- 
+
   return (
     <GameProvider>
       <React.Fragment>
@@ -25,6 +25,12 @@ function MyApp({ Component, pageProps }) {
         ></Script>
         <Script src="https://code.jquery.com/jquery-3.5.1.js"></Script>
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></Script>
+        <audio
+          id="audioBackground"
+          loop
+          autoPlay={false}
+          src="https://3sdigital.com.br/videovaltra/audiogame/Kingdom-sticks.mp3"
+        />
         <Component {...pageProps} />
         <ToastContainer />
       </React.Fragment>

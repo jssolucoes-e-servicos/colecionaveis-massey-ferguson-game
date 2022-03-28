@@ -150,6 +150,7 @@
   width: 100%;
   max-width: 100%;
   text-align: start;
+  margin-top: 20px;
 }
 .Cadt2 {
   width: 100%;
@@ -539,7 +540,7 @@
 }
 @media (max-width: 992px) {
   .form_cadMobo {
-    max-width: 100%;
+    max-width: 95%;
   }
   .sign_up {
     margin-left: -20;
@@ -574,5 +575,9 @@
   }
   .sub-cont {
     display: flex;
+  }
+  #FormcadFull{
+    width: 95%;
+    max-width: 95%;
   }
 }

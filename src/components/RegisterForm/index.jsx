@@ -1,8 +1,10 @@
 import loginCSS from "@/assets/css/login.module.css";
+import IconicosImg from "@/assets/images/MF_Logo_Red_Grey.png";
 import I18n from "@/components/I18n/I18n";
 import Translator from "@/components/I18n/Translator";
 import GameContext from "@/contexts/gameContext";
 import API from "@/services/api";
+import Image from "next/image";
 import Router from "next/router";
 import { setCookie } from 'nookies';
 import React, { useContext } from "react";
@@ -10,55 +12,54 @@ import { useForm } from "react-hook-form";
 import InputMask from "react-input-mask";
 import { toast } from "react-toastify";
 
-
 export default function RegisterForm({ functions }) {
   const { register, handleSubmit } = useForm();
   const { setLoad } = useContext(GameContext);
 
-const handleRegister = async (data) => {
-  if (validate(data)) {
-    if (data.password === data.verify) {
-      setLoad(true);
-      try {
-        const { data: response } = await API.post("players/register", {
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          birth: data.birth,
-          country: data.country,
-          province: data.province,
-          city: data.city,
-          password: data.password,
-          language: data.language,
-        });
-        API.defaults.headers['Authorization'] = `Bearer ${response.token}`;
-        await functions.verifyPremier();
-        localStorage.setItem("init", "true");
-        setCookie(null, 'cmf-00', JSON.stringify(response.player), {
-          maxAge: 30 * 24 * 60 * 60,
-          path: '/',
-        });
-        setCookie(null, 'cmf-01', response.token, {
-          maxAge: 30 * 24 * 60 * 60,
-          path: '/',
-        });
-        Router.push("/game");
-        setLoad(false);
-      } catch (error) {
-        console.error(error);
-        
+  const handleRegister = async (data) => {
+    if (validate(data)) {
+      if (data.password === data.verify) {
+        setLoad(true);
+        try {
+          const { data: response } = await API.post("players/register", {
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            birth: data.birth,
+            country: data.country,
+            province: data.province,
+            city: data.city,
+            password: data.password,
+            language: data.language,
+          });
+          API.defaults.headers['Authorization'] = `Bearer ${response.token}`;
+          await functions.verifyPremier();
+          localStorage.setItem("init", "true");
+          setCookie(null, 'cmf-00', JSON.stringify(response.player), {
+            maxAge: 30 * 24 * 60 * 60,
+            path: '/',
+          });
+          setCookie(null, 'cmf-01', response.token, {
+            maxAge: 30 * 24 * 60 * 60,
+            path: '/',
+          });
+          Router.push("/game");
+          setLoad(false);
+        } catch (error) {
+          console.error(error);
+
+        }
+      } else {
+        functions.handleAudioEffectError();
+        toast.error("A senha não confere com a verificação!");
       }
     } else {
       functions.handleAudioEffectError();
-      toast.error("A senha não confere com a verificação!");
+      toast.error("Todos os campos são de preenchimento obrigatório!");
     }
-  } else {
-    functions.handleAudioEffectError();
-    toast.error("Todos os campos são de preenchimento obrigatório!");
   }
-}
 
- function validate(data) {
+  function validate(data) {
     if (
       data.name.length > 0 &&
       data.email.length > 0 &&
@@ -82,7 +83,12 @@ const handleRegister = async (data) => {
       <div className={loginCSS.form_cadMobo}>
         <div className={loginCSS.sign_G}>
           <div className={loginCSS.login_h2}>
-            {/* <Image className={loginCSS.Logi_img_emnpresa} src="/storage/images/brands/MF_Logo_Red_Gray" alt="logo" /> */}
+            <Image
+              className={loginCSS.iconicos}
+              src={IconicosImg}
+              alt="logo"
+              style={{ width: 50, maxWidth: 80 }}
+            />
           </div>
           <div className={loginCSS.login_h2}>
             <h2 className={loginCSS.login_txt}>
@@ -202,6 +208,7 @@ const handleRegister = async (data) => {
                 type="submit"
                 onClick={functions.handleRegister}
                 className={[loginCSS.login_button]}
+                style={{ marginTop: 30, marginBottom: 20 }}
               >
                 <Translator path="register.button" />
               </button>
@@ -221,13 +228,13 @@ const handleRegister = async (data) => {
                 className={loginCSS.RadioR}
                 name="type"
                 value="3"
-              
+
               />
               <label className={loginCSS.LBr} htmlFor="html">
                 Declaração de Consentimento
               </label>
             </div>
-          </form>      
+          </form>
           <div className={loginCSS.login_separation_cad}>
             <span className={loginCSS.SpanTerms}>
               Declaração de Consentimento A declaração de consentimento a seguir

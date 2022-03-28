@@ -3,19 +3,20 @@ import GameContext from '@/contexts/gameContext';
 import api from '@/services/api';
 import Link from 'next/link';
 import Router from "next/router";
+import { destroyCookie } from 'nookies';
 import React, { useContext } from "react";
 import {
   Btnmobile, ContainerMobile, Imabtnmobi, Spann, Sptxt, Txtbtnmobile
 } from "./styles";
 
 export default function MenuMobile({ id }) {
-  const {setLoad}=useContext(GameContext)
+  const { setLoad } = useContext(GameContext);
 
- async function executeLogout() {
+  async function executeLogout() {
     setLoad(true);
     await api.post("logout");
     destroyCookie(null, 'cmf-00');
-    destroyCookie(null, 'cmf-01');  
+    destroyCookie(null, 'cmf-01');
     Router.push("/login");
     setLoad(false);
   }
@@ -38,18 +39,18 @@ export default function MenuMobile({ id }) {
         </Btnmobile>
       </Link>
       <Link href="/game/player">
-      <Btnmobile >
-        <Txtbtnmobile>
-          <Spann></Spann>
-          <Spann></Spann>
-          <Spann></Spann>
-          <Spann></Spann>
-          <Imabtnmobi src="/storage/images/icons/user.png"/>
-          <Sptxt>
-            Perfil
-            <Translator path-="menu.profile" />
-          </Sptxt>
-        </Txtbtnmobile>
+        <Btnmobile >
+          <Txtbtnmobile>
+            <Spann></Spann>
+            <Spann></Spann>
+            <Spann></Spann>
+            <Spann></Spann>
+            <Imabtnmobi src="/storage/images/icons/user.png" />
+            <Sptxt>
+              Perfil
+              <Translator path-="menu.profile" />
+            </Sptxt>
+          </Txtbtnmobile>
         </Btnmobile>
       </Link>
       <Link href="/game">
@@ -98,18 +99,18 @@ export default function MenuMobile({ id }) {
         </Btnmobile>
       </Link>
       <Link href="game/historico">
-      <Btnmobile>
-        <Txtbtnmobile>
-          <Spann></Spann>
-          <Spann></Spann>
-          <Spann></Spann>
-          <Spann></Spann>
-          <Imabtnmobi src="/storage/images/icons/historico.png" style={{ width: 16 }} />
-          <Sptxt>
-            Historico
-            <Translator path-="menu.historic" />
-          </Sptxt>
-        </Txtbtnmobile>
+        <Btnmobile>
+          <Txtbtnmobile>
+            <Spann></Spann>
+            <Spann></Spann>
+            <Spann></Spann>
+            <Spann></Spann>
+            <Imabtnmobi src="/storage/images/icons/historico.png" style={{ width: 16 }} />
+            <Sptxt>
+              Historico
+              <Translator path-="menu.historic" />
+            </Sptxt>
+          </Txtbtnmobile>
         </Btnmobile>
       </Link>
 
@@ -124,7 +125,7 @@ export default function MenuMobile({ id }) {
             <Translator path-="menu.logout" />
           </Sptxt>
         </Txtbtnmobile>
-        </Btnmobile>
+      </Btnmobile>
 
     </ContainerMobile>
   );

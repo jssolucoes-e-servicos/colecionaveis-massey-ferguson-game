@@ -25,7 +25,7 @@ export default function Template({ children, userData }) {
   const [isLoadingApp, setIsLoadingApp] = useState(false);
   const [acceptedRule, setAcceptedRule] = useState(false);
   const [playAudio, setPlayAudio] = useState(false);
-  
+
   useEffect(() => {
     async function setConfigs() {
       //verifield is the Rules Play is accepted
@@ -48,9 +48,9 @@ export default function Template({ children, userData }) {
         sessionStorage.setItem("isMobile", "false");
         setIsMobile(false);
       }
-       window.addEventListener("resize", function () {
+      window.addEventListener("resize", function () {
         sizeOfThings();
-       }); 
+      });
       //call this top function
       StartingAppLoad();
     }
@@ -99,14 +99,14 @@ export default function Template({ children, userData }) {
       localStorage.setItem("cmf-ap", "true");
       setPlayAudio(true);
     }
-     handleAudioBackground();
+    handleAudioBackground();
   }
 
   async function executeLogout() {
     setLoad(true);
     await API.post("logout");
     destroyCookie(null, 'cmf-00');
-    destroyCookie(null, 'cmf-01');  
+    destroyCookie(null, 'cmf-01');
     Router.push("/login");
     setLoad(false);
   }
@@ -128,13 +128,13 @@ export default function Template({ children, userData }) {
     }
   }
 
-function handleAudioBackground() {
+  function handleAudioBackground() {
     const audioBackground = document.querySelector("#audioBackground");
-  if (playAudio === true) {
-      audioBackground.volume = 0.04;
+    if (playAudio === true) {
+      audioBackground.volume = 0.01;
       audioBackground.play();
-      
-  } else {
+
+    } else {
       audioBackground.volume = 0.01;
       audioBackground.pause();
     }
@@ -149,12 +149,7 @@ function handleAudioBackground() {
       ) : (
         <React.Fragment />
       )}
-       <audio
-        id="audioBackground"
-        loop
-        autoPlay={true}
-        src="https://3sdigital.com.br/videovaltra/audiogame/Kingdom-sticks.mp3"
-      />
+
       <section className="containerlauncher">
         <div className="Launchercontainer">
           <div className="MenuMobileA" onClick={Segmobile}>
@@ -191,7 +186,7 @@ function handleAudioBackground() {
             <div className="Imgempresa" style={{ marginBottom: 5 }}>
               <img src="/storage/images/brand/MF_LogoWhite.png" alt="logo" />
             </div>
-            <Link href="/game/como-jogar" onClick={()=>{setLoad(true)}}>
+            <Link href="/game/como-jogar" onClick={() => { setLoad(true) }}>
               <button className="btnMute">
                 <div className="btnf">
                   <div className="TxtLef">
@@ -206,7 +201,7 @@ function handleAudioBackground() {
               </button>
             </Link>
 
-            <Link href="/game/player" onClick={()=>{setLoad(true)}}>  
+            <Link href="/game/player" onClick={() => { setLoad(true) }}>
               <button className="btnMute">
                 <div className="btnf">
                   <div className="TxtLef">
@@ -218,7 +213,7 @@ function handleAudioBackground() {
                 </div>
               </button>
             </Link>
-            <Link href="/game"  onClick={()=>{setLoad(true)}}>
+            <Link href="/game" onClick={() => { setLoad(true) }}>
               <button className="btnMute">
                 <div className="btnf">
                   <div className="TxtLef">
@@ -230,7 +225,7 @@ function handleAudioBackground() {
                 </div>
               </button>
             </Link>
-            <Link href="/game/banca" onClick={()=>{setLoad(true)}}>
+            <Link href="/game/banca" onClick={() => { setLoad(true) }}>
               <button
                 className="btnMute">
                 <div className="btnf">
@@ -245,7 +240,7 @@ function handleAudioBackground() {
                 </div>
               </button>
             </Link>
-            <Link href="/game/ranking" onClick={()=>{setLoad(true)}}>
+            <Link href="/game/ranking" onClick={() => { setLoad(true) }}>
               <button className="btnMute">
                 <div className="btnf">
                   <div className="TxtLef">
@@ -257,7 +252,7 @@ function handleAudioBackground() {
                 </div>
               </button>
             </Link>
-            <Link href="/game/historico" onClick={()=>{setLoad(true)}}>  
+            <Link href="/game/historico" onClick={() => { setLoad(true) }}>
               <button className="btnMute">
                 <div className="btnf">
                   <div className="TxtLef">
